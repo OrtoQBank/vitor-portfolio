@@ -6,8 +6,5 @@ export { default as TestimonialCards } from "./TestimonialCards";
 export { default as Stats } from "./Stats";
 export { default as Specialties } from "./Specialties";
 export { default as FeaturedCTA } from "./FeaturedCTA";
-export { default as Treatments } from "./Treatments";
-export { default as About } from "./About";
-export { default as FAQ } from "./FAQ";
 export { default as FinalCTA } from "./FinalCTA";
 export { default as Footer } from "./Footer";
