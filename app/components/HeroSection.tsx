@@ -25,7 +25,7 @@ export default function HeroSection() {
             href="tel:+5511999999999"
             className="inline-flex items-center gap-2 rounded-full px-5 py-4 text-sm font-normal leading-none transition-all bg-white/10 backdrop-blur-sm border-2 border-white/40 text-primary-foreground hover:bg-white/20"
           >
-            <span className="text-nowrap">Falar com Especialista</span>
+            <span className="text-nowrap">Saiba mais!</span>
           </a>
         </div>
       </div>
