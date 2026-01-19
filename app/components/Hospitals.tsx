@@ -27,50 +27,56 @@ export default function Hospitals() {
   ];
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number | null>(null);
+
+  // Duplicar os hospitais para criar loop infinito
+  const duplicatedHospitals = [...hospitals, ...hospitals, ...hospitals];
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    let isDown = false;
-    let startX: number;
-    let scrollLeft: number;
+    let scrollSpeed = 0.5; // pixels por frame
+    let isPaused = false;
 
-    const handleMouseDown = (e: MouseEvent) => {
-      isDown = true;
-      container.classList.add('active');
-      startX = e.pageX - container.offsetLeft;
-      scrollLeft = container.scrollLeft;
+    const animate = () => {
+      if (!container || isPaused) {
+        animationRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
+      container.scrollLeft += scrollSpeed;
+
+      // Reset para criar loop infinito
+      const maxScroll = container.scrollWidth / 3; // Dividir por 3 porque triplicamos
+      if (container.scrollLeft >= maxScroll) {
+        container.scrollLeft = 0;
+      }
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    // Pausar ao passar mouse
+    const handleMouseEnter = () => {
+      isPaused = true;
     };
 
     const handleMouseLeave = () => {
-      isDown = false;
-      container.classList.remove('active');
+      isPaused = false;
     };
 
-    const handleMouseUp = () => {
-      isDown = false;
-      container.classList.remove('active');
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2;
-      container.scrollLeft = scrollLeft - walk;
-    };
-
-    container.addEventListener('mousedown', handleMouseDown);
+    container.addEventListener('mouseenter', handleMouseEnter);
     container.addEventListener('mouseleave', handleMouseLeave);
-    container.addEventListener('mouseup', handleMouseUp);
-    container.addEventListener('mousemove', handleMouseMove);
+
+    // Iniciar animação
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
-      container.removeEventListener('mousedown', handleMouseDown);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      container.removeEventListener('mouseenter', handleMouseEnter);
       container.removeEventListener('mouseleave', handleMouseLeave);
-      container.removeEventListener('mouseup', handleMouseUp);
-      container.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
@@ -87,9 +93,9 @@ export default function Hospitals() {
 
       <div 
         ref={scrollContainerRef}
-        className="horizontal-gallery flex gap-8 overflow-x-auto px-6 md:px-12 pb-8 cursor-grab active:cursor-grabbing"
+        className="horizontal-gallery flex gap-8 overflow-x-hidden px-6 md:px-12 pb-8"
       >
-        {hospitals.map((hospital, index) => (
+        {duplicatedHospitals.map((hospital, index) => (
           <div 
             key={index} 
             className="gallery-item shrink-0 w-[500px] md:w-[600px] group"
@@ -137,29 +143,16 @@ export default function Hospitals() {
             </div>
           </div>
         ))}
-
-        {/* Spacer final para melhor navegação */}
-        <div className="shrink-0 w-6" />
       </div>
 
       <style jsx global>{`
         .horizontal-gallery {
           scrollbar-width: none;
           -ms-overflow-style: none;
-          scroll-behavior: smooth;
         }
         
         .horizontal-gallery::-webkit-scrollbar {
           display: none;
-        }
-
-        .horizontal-gallery.active {
-          cursor: grabbing;
-          scroll-behavior: auto;
-        }
-
-        .horizontal-gallery.active .gallery-item {
-          pointer-events: none;
         }
 
         .gallery-item {

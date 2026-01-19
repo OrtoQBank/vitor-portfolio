@@ -7,7 +7,6 @@ export { default as Stats } from "./Stats";
 export { default as Specialties } from "./Specialties";
 export { default as About } from "./About";
 export { default as Hospitals } from "./Hospitals";
-export { default as Treatments } from "./Treatments";
 export { default as FeaturedCTA } from "./FeaturedCTA";
 export { default as FAQ } from "./FAQ";
 export { default as FinalCTA } from "./FinalCTA";
