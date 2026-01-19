@@ -13,7 +13,7 @@ export default function Specialties() {
   useEffect(() => {
     if (!sectionRef.current || !cardRef.current) return;
 
-    gsap.fromTo(
+    const animation = gsap.fromTo(
       cardRef.current,
       {
         opacity: 0,
@@ -28,11 +28,15 @@ export default function Specialties() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top center+=100", // Inicia quando o topo da seção passar um pouco do centro
+          start: "top center+=100",
           toggleActions: "play none none reverse",
         },
       }
     );
+
+    return () => {
+      animation.kill();
+    };
   }, []);
 
   return (

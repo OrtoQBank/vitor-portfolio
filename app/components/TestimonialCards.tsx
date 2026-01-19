@@ -89,7 +89,7 @@ export default function TestimonialCards({
       );
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      tl.kill();
     };
   }, [sectionRef]);
 
