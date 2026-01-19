@@ -1,6 +1,4 @@
-import Header from "../components/Header";
-
-export default function ServicesPage() {
+export default function Treatments() {
   const services = [
     {
       title: "Artroscopia de Joelho",
@@ -29,12 +27,12 @@ export default function ServicesPage() {
       ),
     },
     {
-      title: "Prótese de Joelho (Artroplastia)",
+      title: "Prótese de Joelho",
       description:
         "Substituição da articulação desgastada por componentes metálicos e plásticos de alta durabilidade.",
       details: [
         "Prótese Total",
-        "Prótese Parcial (Unicompartimental)",
+        "Prótese Parcial",
         "Revisão de Prótese",
         "Tecnologia Robótica",
       ],
@@ -161,69 +159,66 @@ export default function ServicesPage() {
   ];
 
   return (
-    <>
-      <Header />
-      <main className="pt-32 pb-20 px-6 bg-white min-h-screen">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Serviços e Tratamentos
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Oferecemos um espectro completo de tratamentos para o joelho,
-              desde terapias conservadoras até as cirurgias mais complexas.
-            </p>
-          </div>
+    <section id="tratamentos" className="py-20 px-6 bg-white">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Serviços e Tratamentos
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Oferecemos um espectro completo de tratamentos para o joelho,
+            desde terapias conservadoras até as cirurgias mais complexas.
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow group"
-              >
-                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6 min-h-[3rem]">
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.details.map((detail, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center text-sm text-gray-500"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mr-2" />
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow group"
+            >
+              <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                {service.icon}
               </div>
-            ))}
-          </div>
-
-          <div className="mt-20 bg-primary rounded-3xl p-10 text-center text-white relative overflow-hidden">
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-4">
-                Precisa de uma avaliação?
-              </h2>
-              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                Agende uma consulta para discutirmos o melhor tratamento para o
-                seu caso específico.
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 mb-6 min-h-[3rem]">
+                {service.description}
               </p>
-              <a
-                href="/contato"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-primary font-bold hover:bg-gray-100 transition-colors"
-              >
-                Agendar Consulta
-              </a>
+              <ul className="space-y-2">
+                {service.details.map((detail, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-center text-sm text-gray-500"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mr-2" />
+                    {detail}
+                  </li>
+                ))}
+              </ul>
             </div>
+          ))}
+        </div>
+
+        <div className="mt-20 bg-primary rounded-3xl p-10 text-center text-white relative overflow-hidden">
+          <div className="relative z-10">
+            <h3 className="text-3xl font-bold mb-4">
+              Precisa de uma avaliação?
+            </h3>
+            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+              Agende uma consulta para discutirmos o melhor tratamento para o
+              seu caso específico.
+            </p>
+            <a
+              href="#contato"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-primary font-bold hover:bg-gray-100 transition-colors"
+            >
+              Agendar Consulta
+            </a>
           </div>
         </div>
-      </main>
-    </>
+      </div>
+    </section>
   );
 }
