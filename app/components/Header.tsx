@@ -23,7 +23,7 @@ export default function Header() {
               </svg>
             </div>
             <Link href="/" className="text-xl font-bold text-gray-900">
-              Dr. Vitor
+              Dr. Vitor Ricardo
             </Link>
           </div>
 

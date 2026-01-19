@@ -48,110 +48,93 @@ export default function Specialties() {
         <div className="p-8 md:p-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Áreas de Especialização
+              Áreas de atuação
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Tratamento personalizado para cada fase da sua vida
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Artrose do Joelho, Prótese Total e Artroscopia
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 relative">
-            {/* Linha divisória vertical para desktop */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 to-transparent -translate-x-1/2" />
+          <div className="mb-12">
+            <p className="text-gray-700 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+              Atuo no tratamento da artrose do joelho utilizando técnicas minimamente invasivas e prótese de joelho, com objetivo de devolver saúde e qualidade de vida aos meus pacientes. Também realizo o tratamento de lesões esportivas do joelho (ligamentos, meniscos, cartilagem) por artroscopia, possibilitando o retorno pleno ao esporte.
+            </p>
+          </div>
 
-            {/* Artrose */}
-            <div className="flex flex-col h-full">
-              <div className="flex items-start gap-6 mb-8">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <svg
-                    className="w-8 h-8 text-primary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
-                    Tratamento de Artrose
-                  </h3>
-                  <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm">
-                    Pacientes 50-70 anos
-                  </span>
-                </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Consulta presencial e online */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
-              <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                Tratamento completo desde opções conservadoras até cirurgia de
-                prótese total de joelho, com foco na recuperação da mobilidade e
-                qualidade de vida.
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Consulta presencial e online
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Suporte 24h ao paciente.
               </p>
-              <ul className="space-y-4 mt-auto">
-                <li className="flex items-center gap-4 text-gray-700 text-lg">
-                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                  Prótese total e parcial de joelho
-                </li>
-                <li className="flex items-center gap-4 text-gray-700 text-lg">
-                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                  Avaliação e diagnóstico precisos
-                </li>
-                <li className="flex items-center gap-4 text-gray-700 text-lg">
-                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                  Acompanhamento pós-operatório completo
-                </li>
-              </ul>
             </div>
 
-            {/* Atletas */}
-            <div className="flex flex-col h-full">
-              <div className="flex items-start gap-6 mb-8">
-                <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                  <svg
-                    className="w-8 h-8 text-secondary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
-                    Lesões Esportivas
-                  </h3>
-                  <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary font-medium text-sm">
-                    Jovens Atletas
-                  </span>
-                </div>
+            {/* Atuação acadêmica */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
               </div>
-              <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                Tratamento especializado focado na recuperação completa e retorno
-                seguro às atividades esportivas de alto desempenho.
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Atuação acadêmica
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Tratamentos pautados em evidência científica atualizada e formação completa na maior universidade do país.
               </p>
-              <ul className="space-y-4 mt-auto">
-                <li className="flex items-center gap-4 text-gray-700 text-lg">
-                  <div className="w-2 h-2 rounded-full bg-secondary flex-shrink-0" />
-                  Reconstrução de ligamentos (LCA/LCP)
-                </li>
-                <li className="flex items-center gap-4 text-gray-700 text-lg">
-                  <div className="w-2 h-2 rounded-full bg-secondary flex-shrink-0" />
-                  Tratamento de lesões meniscais
-                </li>
-                <li className="flex items-center gap-4 text-gray-700 text-lg">
-                  <div className="w-2 h-2 rounded-full bg-secondary flex-shrink-0" />
-                  Reabilitação esportiva avançada
-                </li>
-              </ul>
+            </div>
+
+            {/* Procedimentos minimamente invasivos */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Procedimentos minimamente invasivos
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Recuperação rápida, prática e indolor da autonomia e bem-estar.
+              </p>
+            </div>
+
+            {/* Prótese de Joelho */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Prótese de Joelho
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Técnica personalizada para sua anatomia, objetivando melhores resultados.
+              </p>
+            </div>
+
+            {/* Artroscopia */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Artroscopia
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Tratamento das lesões esportivas (ligamentos, meniscos) com conceitos modernos.
+              </p>
             </div>
           </div>
         </div>
