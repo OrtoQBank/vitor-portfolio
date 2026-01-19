@@ -18,7 +18,7 @@ export default function DifferenceSection() {
           <h2 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal text-gray-900 leading-[1.1] tracking-tight  select-none">
             Dr. Vitor Ricardo.
             <br />
-            Excelência em
+            Segurança em
             <br />
             Cirurgia de Joelho.
           </h2>
