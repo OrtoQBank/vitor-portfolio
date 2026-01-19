@@ -15,11 +15,12 @@ export default function Home() {
   return (
     <div className="bg-white">
       <HeroSection />
-      <TrustBadges />
+      
       <DifferenceSection />
       <Stats />
       <Specialties />
       <About />
+      <TrustBadges />
       <Hospitals />
       <Treatments />
       <FeaturedCTA />
