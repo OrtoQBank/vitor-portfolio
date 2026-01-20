@@ -1,13 +1,5 @@
 export { default as Header } from "./Header";
 export { default as HeroSection } from "./HeroSection";
-export { default as TrustBadges } from "./TrustBadges";
 export { default as DifferenceSection } from "./DifferenceSection";
-export { default as TestimonialCards } from "./TestimonialCards";
-export { default as Stats } from "./Stats";
-export { default as Specialties } from "./Specialties";
-export { default as About } from "./About";
-export { default as Hospitals } from "./Hospitals";
-export { default as FeaturedCTA } from "./FeaturedCTA";
-export { default as FAQ } from "./FAQ";
-export { default as FinalCTA } from "./FinalCTA";
-export { default as Footer } from "./Footer";
+export { default as ContactAnimation } from "./ContactAnimation";
+export { default as PinnedSections } from "./PinnedSections";
