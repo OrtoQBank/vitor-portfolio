@@ -4,6 +4,7 @@ import DifferenceSection from "./components/DifferenceSection";
 import Stats from "./components/Stats";
 import Specialties from "./components/Specialties";
 import About from "./components/About";
+import Hospitals from "./components/Hospitals";
 import Treatments from "./components/Treatments";
 import FeaturedCTA from "./components/FeaturedCTA";
 import FAQ from "./components/FAQ";
@@ -19,6 +20,7 @@ export default function Home() {
       <Stats />
       <Specialties />
       <About />
+      <Hospitals />
       <Treatments />
       <FeaturedCTA />
       <FAQ />
