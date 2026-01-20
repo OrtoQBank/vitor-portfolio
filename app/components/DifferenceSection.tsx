@@ -22,7 +22,7 @@ export default function DifferenceSection() {
               <br />
               Segurança em
               <br />
-              Cirurgia de Joelha
+              Cirurgia de Joelho
             </h2>
 
             {/* Animação de contato - abaixo do texto */}
