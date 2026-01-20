@@ -2,48 +2,27 @@
 
 import { useRef } from "react";
 import ContactAnimation from "./ContactAnimation";
-import LogoLoop from "../shared/LogoLoop";
 
 export default function DifferenceSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  const achievementText = "Top 1 - (Ortopedia - Exame SBOT)";
-  const badges = [
-    { node: <span className="text-gray-900 font-normal text-5xl md:text-6xl lg:text-7xl whitespace-nowrap">{achievementText}</span> },
-    { node: <span className="text-gray-900 font-normal text-5xl md:text-6xl lg:text-7xl whitespace-nowrap">{achievementText}</span> },
-  ];
-
   return (
     <section
       ref={sectionRef}
+      id="contato"
       className="relative h-[200vh] bg-white"
     >
-      <div className="sticky top-0 left-0 w-full h-screen flex flex-col px-6 overflow-hidden pt-24">
-        {/* TrustBadges abaixo da navbar */}
-        <div className="w-full py-6">
-          <LogoLoop
-            logos={badges}
-            speed={60}
-            direction="right"
-            logoHeight={80}
-            gap={100}
-            pauseOnHover={false}
-            fadeOut={false}
-            fadeOutColor="#ffffff"
-            ariaLabel="Top 1 Ortopedia - Exame SBOT"
-          />
-        </div>
-
+      <div className="sticky top-0 left-0 w-full h-screen flex flex-col px-6 overflow-hidden">
         {/* Conteúdo central */}
         <div className="flex-1 flex items-center justify-center">
           <div className="container mx-auto max-w-7xl text-center">
             {/* Texto principal */}
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal text-gray-900 leading-tight tracking-tight select-none mb-12">
-              Dr. Vitor Ricardo.
+              Dr. Vitor Ricardo
               <br />
               Segurança em
               <br />
-              Cirurgia de Joelho.
+              Cirurgia de Joelho
             </h2>
 
             {/* Animação de contato - abaixo do texto */}

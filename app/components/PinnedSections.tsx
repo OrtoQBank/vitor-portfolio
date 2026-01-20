@@ -7,61 +7,60 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: 2000, suffix: "+", label: "Cirurgias Realizadas" },
-  { value: 15, suffix: "+", label: "Anos de Experiência" },
-  { value: 98, suffix: "%", label: "Taxa de Satisfação" },
-  { value: 6, prefix: "3-", label: "Meses Recuperação Média" },
+  { value: 2000, suffix: "+", label: "CIRURGIAS REALIZADAS" },
+  { value: 15, suffix: "+", label: "ANOS DE EXPERIÊNCIA" },
+  { value: 1500, suffix: "+", label: "CIRURGIAS DE ARTROSE" },
+  { value: 800, suffix: "+", label: "LESÕES ESPORTIVAS TRATADAS" },
+];
+
+const formacao = [
+  "Graduado em Medicina pela USP",
+  "Residência em Ortopedia no IOT-HCFMUSP",
+  "1º lugar - Título de Especialista SBOT",
+  "Especialização em Cirurgia do Joelho",
+  "Membro Titular da SBOT e SBCJ",
+  "Preceptor na Faculdade de Medicina da USP",
 ];
 
 const treatments = [
-  {
-    number: "01",
-    title: "Prótese do Joelho",
-    description: "Substituição da articulação desgastada por componentes metálicos e plásticos de alta durabilidade.",
+  { 
+    title: "Prótese Total do Joelho", 
+    description: "Artroplastia total do joelho com planejamento pré-operatório individualizado, utilizando análise de eixo mecânico, alinhamento funcional e implantes de alta durabilidade para restauração precisa da biomecânica articular." 
   },
-  {
-    number: "02",
-    title: "Artrose do Joelho",
-    description: "Tratamento completo utilizando técnicas modernas e minimamente invasivas.",
+  { 
+    title: "Artrose do Joelho", 
+    description: "Tratamento da osteoartrose baseado em estadiamento clínico e radiológico, com protocolos personalizados que incluem terapias conservadoras avançadas, infiltrações guiadas e indicação cirúrgica no momento ideal." 
   },
-  {
-    number: "03",
-    title: "Bloqueio Genicular",
-    description: "Procedimento minimamente invasivo para controle da dor crônica no joelho.",
+  { 
+    title: "Técnicas Minimamente Invasivas", 
+    description: "Abordagens cirúrgicas que preservam partes moles, reduzem agressão muscular e perda sanguínea, otimizando cicatrização, controle da dor e recuperação funcional precoce." 
+  },
+  { 
+    title: "Bloqueio dos Nervos Geniculares", 
+    description: "Procedimento intervencionista guiado por anatomia de superfície e imagem, indicado para analgesia em dor crônica do joelho refratária, especialmente em pacientes sem indicação cirúrgica." 
   },
 ];
 
 const faqs = [
-  {
-    q: "Como agendar uma consulta?",
-    a: "Você pode agendar sua consulta através do nosso WhatsApp, por telefone ou preenchendo o formulário de contato.",
-  },
-  {
-    q: "Aceita convênios?",
-    a: "Atendemos diversos convênios médicos para consultas e cirurgias. Entre em contato para verificar a cobertura.",
-  },
-  {
-    q: "Onde as cirurgias são realizadas?",
-    a: "As cirurgias são realizadas nos melhores hospitais de São Paulo, com toda infraestrutura e segurança.",
-  },
-  {
-    q: "Quanto tempo dura a internação?",
-    a: "Artroscopias permitem alta no mesmo dia. Próteses costumam requerer 2 a 3 dias de internação.",
-  },
-  {
-    q: "Quando começo a fisioterapia?",
-    a: "A fisioterapia inicia-se ainda no hospital ou na primeira semana após a cirurgia.",
-  },
-  {
-    q: "Vou precisar usar muletas?",
-    a: "Depende do procedimento. Em artroscopias simples geralmente não é necessário. Em próteses, o uso é temporário.",
-  },
+  { q: "Como agendar uma consulta?", a: "Você pode agendar sua consulta através do nosso WhatsApp, por telefone ou preenchendo o formulário de contato." },
+  { q: "Aceita convênios?", a: "Atendemos diversos convênios médicos para consultas e cirurgias. Entre em contato para verificar a cobertura." },
+  { q: "Onde as cirurgias são realizadas?", a: "As cirurgias são realizadas nos melhores hospitais de São Paulo, com toda infraestrutura e segurança." },
+  { q: "Quanto tempo dura a internação?", a: "Artroscopias permitem alta no mesmo dia. Próteses costumam requerer 2 a 3 dias de internação." },
+];
+
+const hospitals = [
+  { name: "Vila Nova Star", image: "/vilanovastar.jpg" },
+  { name: "Hospital Sírio-Libanês", image: "/sirio.jpg" },
+  { name: "Hospital Nove de Julho", image: "/9dejulho.png" },
+  { name: "Hospital São Camilo", image: "/saocamilo.jpeg" },
+  { name: "São Luiz Itaim", image: "/saoluis.avif" },
 ];
 
 export default function PinnedSections() {
   const containerRef = useRef<HTMLDivElement>(null);
   const panelsRef = useRef<(HTMLElement | null)[]>([]);
   const statsElementsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const hospitalsTrackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -69,8 +68,7 @@ export default function PinnedSections() {
     const panels = panelsRef.current.filter(Boolean) as HTMLElement[];
 
     const ctx = gsap.context(() => {
-      // Configura apenas os 2 primeiros painéis para o efeito de pinning
-      // O último painel (FAQ) não precisa de pin - ele só "empurra" o anterior
+      // Configura os painéis para o efeito de pinning (exceto hospitais)
       panels.slice(0, -1).forEach((panel) => {
         ScrollTrigger.create({
           trigger: panel,
@@ -81,7 +79,30 @@ export default function PinnedSections() {
         });
       });
 
-      // Animação dos números stats quando a seção About ficar visível
+      // Animação horizontal para a seção de hospitais
+      const hospitalsPanel = panels[panels.length - 1];
+      const hospitalsTrack = hospitalsTrackRef.current;
+      
+      if (hospitalsPanel && hospitalsTrack) {
+        const trackWidth = hospitalsTrack.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        const scrollDistance = trackWidth - viewportWidth + 80; // 80px para padding
+
+        gsap.to(hospitalsTrack, {
+          x: -scrollDistance,
+          ease: "none",
+          scrollTrigger: {
+            trigger: hospitalsPanel,
+            start: "top top",
+            end: `+=${scrollDistance}`,
+            pin: true,
+            scrub: 1,
+            pinSpacing: true,
+          },
+        });
+      }
+
+      // Animação dos números stats
       const statsElements = statsElementsRef.current.filter(Boolean);
       statsElements.forEach((el, index) => {
         if (!el) return;
@@ -119,61 +140,73 @@ export default function PinnedSections() {
         id="sobre"
         className="relative h-screen z-10"
       >
-        <div className="h-screen w-full bg-slate-900 flex items-center justify-center px-6 py-20 overflow-hidden">
-          {/* Background elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-          </div>
+        <div className="h-screen w-full bg-blue-50 flex px-0 overflow-hidden">
+          {/* Lado Esquerdo - Nome, Stats, Formação e Atuação */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-20 py-12">
+            
+            
+            <h2 className="text-7xl md:text-8xl lg:text-9xl font-bold text-gray-900 tracking-tighter leading-[0.9] mb-12">
+              Dr. Vitor<br />Ricardo
+            </h2>
 
-          <div className="container mx-auto max-w-7xl relative z-10">
-            {/* Título gigante */}
-            <div className="mb-16">
-              <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.9] tracking-tighter">
-                Sobre o
-                <br />
-                <span className="text-primary">médico.</span>
-              </h2>
+            {/* Linha divisória */}
+            <div className="w-full h-px bg-gray-400 mb-8" />
+
+            {/* Stats - Grid Especificações */}
+            <div className="grid grid-cols-2 gap-x-16 gap-y-6 mb-8">
+              {stats.map((stat, index) => (
+                <div key={index}>
+                  <p className="text-sm font-semibold tracking-[0.1em] text-gray-500 uppercase mb-2">{stat.label}</p>
+                  <div
+                    ref={(el) => { statsElementsRef.current[index] = el; }}
+                    className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight"
+                  >
+                    {stat.prefix || ""}0{stat.suffix || ""}
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Grid com informações */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-              {/* Coluna 1 - Formação */}
-              <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-8">Formação</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Graduado em Medicina pela USP",
-                    "Residência em Ortopedia no IOT-HCFMUSP",
-                    "1º lugar no Título de Especialista SBOT",
-                    "Especialização em Cirurgia do Joelho",
-                    "Membro Titular da SBOT e SBCJ",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-4 text-gray-300 text-lg">
-                      <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-2.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Linha divisória */}
+            <div className="w-full h-px bg-gray-400 mb-8" />
 
-              {/* Coluna 2 - Stats */}
+            {/* Formação - Grid de texto com mais ênfase */}
+            <div className="grid grid-cols-2 gap-x-16 gap-y-8">
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-8">Números</h3>
-                <div className="grid grid-cols-2 gap-8">
-                  {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <div
-                        ref={(el) => { statsElementsRef.current[index] = el; }}
-                        className="text-5xl md:text-6xl font-bold text-primary mb-2"
-                      >
-                        {stat.prefix || ""}0{stat.suffix || ""}
-                      </div>
-                      <p className="text-gray-400 text-sm md:text-base">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
+                <p className="text-base font-bold tracking-[0.1em] text-gray-500 uppercase mb-3">GRADUAÇÃO</p>
+                <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Formado em Medicina pela USP, universidade mais respeitadas da América Latina.</p>
               </div>
+              <div>
+                <p className="text-base font-bold tracking-[0.1em] text-gray-500 uppercase mb-3">RESIDÊNCIA</p>
+                <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Instituto de Ortopedia e Traumatologia do HC-FMUSP, maior centro de referência em ortopedia do país.</p>
+              </div>
+              <div>
+                <p className="text-base font-bold tracking-[0.1em] text-gray-500 uppercase mb-3">TÍTULO SBOT</p>
+                <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Conquistou o 1º lugar nacional no exame de título de especialista da SBOT.</p>
+              </div>
+              <div>
+                <p className="text-base font-bold tracking-[0.1em] text-gray-500 uppercase mb-3">ESPECIALIZAÇÃO</p>
+                <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Cirurgia do joelho, com foco em artrose do joelho, prótese total do joelho e artroscopia. </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Lado Direito - Apenas Jornada */}
+          <div className="hidden lg:flex w-1/2 h-full flex-col justify-center px-16 xl:px-20 py-16">
+            <h3 className="text-5xl xl:text-6xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-12">
+              Excelência técnica e cuidado centrado no paciente
+            </h3>
+
+            <div className="space-y-6 text-xl text-gray-700 leading-relaxed font-medium">
+              <p>
+                Desde cedo me interessei pelo estudo da artrose, motivado pelo impacto que essa condição exerce na qualidade de vida dos pacientes.
+              </p>
+              <p>
+                Aprofundei-me em técnicas modernas e minimamente invasivas, buscando aplicar os conceitos mais atuais da artroplastia total do joelho.
+              </p>
+              <p>
+                Atualmente, faço parte do HC-FMUSP, onde atuo como cirurgião, pesquisador e preceptor, auxiliando na formação de novos médicos.
+              </p>
             </div>
           </div>
         </div>
@@ -185,42 +218,62 @@ export default function PinnedSections() {
         id="tratamentos"
         className="relative h-screen z-20"
       >
-        <div className="h-screen w-full bg-white flex items-center justify-center px-6 py-20 overflow-hidden">
-          {/* Background decorativo */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-50/50" />
-            <div className="absolute bottom-0 left-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+        <div className="h-screen w-full bg-neutral-900 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12 overflow-hidden">
+          {/* Título */}
+          <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-stone-200 tracking-tighter leading-[0.9] mb-12">
+            Áreas de Atuação
+          </h2>
+
+          {/* Lista de Tratamentos */}
+          <div className="max-w-5xl">
+            {treatments.map((treatment, index) => (
+              <div key={index}>
+                {/* Linha divisória */}
+                <div className="w-full h-px bg-stone-700 mb-6" />
+                
+                {/* Título do tratamento */}
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-200 leading-tight mb-4">
+                  {treatment.title}
+                </p>
+                
+                {/* Descrição */}
+                <p className="text-lg md:text-xl text-stone-400 leading-relaxed mb-6">
+                  {treatment.description}
+                </p>
+              </div>
+            ))}
+            
+            {/* Linha divisória final */}
+            <div className="w-full h-px bg-stone-700" />
           </div>
+        </div>
+      </section>
 
-          <div className="container mx-auto max-w-7xl relative z-10">
-            {/* Título gigante */}
-            <div className="mb-16">
-              <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-gray-900 leading-[0.9] tracking-tighter">
-                Áreas de
-                <br />
-                <span className="text-primary">atuação.</span>
-              </h2>
-              <p className="text-xl md:text-2xl text-gray-600 mt-8 max-w-2xl font-light">
-                Artrose do Joelho, Prótese Total e Artroscopia
-              </p>
-            </div>
+      {/* SEÇÃO 3 - FAQ */}
+      <section
+        ref={(el) => { panelsRef.current[2] = el; }}
+        id="faq"
+        className="relative h-screen z-30"
+      >
+        <div className="h-screen w-full bg-stone-100 flex items-center px-8 md:px-16 lg:px-24 py-12 overflow-hidden">
+          <div className="container mx-auto max-w-5xl">
+            <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 tracking-tighter leading-[0.9] mb-12">
+              Dúvidas<br />Frequentes
+            </h2>
 
-            {/* Cards de tratamentos */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {treatments.map((treatment, index) => (
-                <div
-                  key={index}
-                  className="group relative bg-gray-50 hover:bg-white border border-gray-200 hover:border-primary rounded-2xl p-8 transition-all duration-500 hover:shadow-xl"
-                >
-                  <div className="text-7xl font-bold text-gray-200 group-hover:text-primary/20 transition-colors mb-4">
-                    {treatment.number}
+            {/* FAQ - Abre com hover */}
+            <div className="space-y-0 border-t border-gray-400">
+              {faqs.map((faq, index) => (
+                <div key={index} className="group border-b border-gray-400">
+                  <div className="flex items-center justify-between py-6 cursor-default transition-all duration-300 group-hover:pl-2">
+                    <span className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">{faq.q}</span>
+                    <span className="text-3xl font-bold text-gray-400 group-hover:text-primary group-hover:rotate-45 transition-all duration-300 shrink-0 ml-4">+</span>
                   </div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                    {treatment.title}
-                  </h4>
-                  <p className="text-gray-600 leading-relaxed">
-                    {treatment.description}
-                  </p>
+                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                    <div className="overflow-hidden">
+                      <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium pb-6 pr-12 pl-2">{faq.a}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -228,42 +281,42 @@ export default function PinnedSections() {
         </div>
       </section>
 
-      {/* SEÇÃO 3 - FAQ (sem pin, fluxo normal após isso) */}
+      {/* SEÇÃO 4 - HOSPITAIS */}
       <section
-        ref={(el) => { panelsRef.current[2] = el; }}
-        id="faq"
-        className="relative z-30 bg-slate-50"
+        ref={(el) => { panelsRef.current[3] = el; }}
+        id="hospitais"
+        className="relative h-screen z-40"
       >
-        <div className="min-h-screen w-full flex items-center justify-center px-6 py-20 overflow-hidden">
-          <div className="container mx-auto max-w-6xl relative z-10">
-            {/* Título gigante */}
-            <div className="mb-12">
-              <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-gray-900 leading-[0.9] tracking-tighter">
-                Dúvidas
-                <br />
-                <span className="text-primary">frequentes.</span>
-              </h2>
-            </div>
+        <div className="h-screen w-full bg-neutral-950 flex flex-col justify-center py-16 overflow-hidden">
+          <div className="mb-8 px-8 md:px-16 lg:px-24">
+            <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[0.9]">
+              Hospitais <br />Onde Atuo
+            </h2>
+          </div>
 
-            {/* FAQ Grid */}
-            <div className="grid md:grid-cols-2 gap-4">
-              {faqs.map((faq, index) => (
-                <details
-                  key={index}
-                  className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-primary open:border-primary open:shadow-lg transition-all duration-300"
+          {/* Galeria Horizontal de Hospitais */}
+          <div className="flex-1 flex items-center overflow-hidden">
+            <div 
+              ref={hospitalsTrackRef}
+              className="flex gap-5 pl-8 md:pl-16 lg:pl-20"
+            >
+              {hospitals.map((hospital, index) => (
+                <div 
+                  key={index} 
+                  className="group relative shrink-0 w-[calc(33.333vw-3rem)] h-[60vh] rounded-md overflow-hidden cursor-pointer"
                 >
-                  <summary className="font-bold text-gray-900 cursor-pointer list-none flex items-center justify-between text-lg">
-                    {faq.q}
-                    <span className="ml-4 shrink-0 text-primary group-open:rotate-180 transition-transform duration-300">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <p className="mt-4 text-gray-600 leading-relaxed">
-                    {faq.a}
-                  </p>
-                </details>
+                  <img
+                    src={hospital.image}
+                    alt={hospital.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
+                  <h3 className="text-xl md:text-2xl font-medium text-white leading-tight">
+                    {hospital.name}
+                  </h3>
+                </div>
+                </div>
               ))}
             </div>
           </div>

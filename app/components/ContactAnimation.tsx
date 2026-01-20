@@ -25,35 +25,30 @@ export default function ContactAnimation({ sectionRef }: ContactAnimationProps) 
     
     if (!section || !card) return;
 
-    // Define estado inicial - invisível
-    gsap.set(card, {
-      y: 100,
-      opacity: 0,
-      scale: 0.8,
-    });
+    // Animação controlada pelo scroll
+    const ctx = gsap.context(() => {
+      gsap.fromTo(card,
+        {
+          y: 150,
+          opacity: 0,
+          scale: 0.8,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "+=50%",
+            scrub: 1,
+          },
+        }
+      );
+    }, section);
 
-    // Cria a animação com ScrollTrigger
-    const animation = gsap.to(card, {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      duration: 1.8,
-      delay: 0.3,
-      ease: "power3.out",
-      paused: true,
-    });
-
-    // ScrollTrigger para disparar quando seção toca o topo
-    const trigger = ScrollTrigger.create({
-      trigger: section,
-      start: "top top",
-      onEnter: () => animation.play(),
-    });
-
-    return () => {
-      trigger.kill();
-      animation.kill();
-    };
+    return () => ctx.revert();
   }, [sectionRef]);
 
   return (
