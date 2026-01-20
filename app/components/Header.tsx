@@ -2,70 +2,39 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pt-6 px-6">
-      <nav className="container mx-auto max-w-6xl">
-        <div className="bg-white/95 backdrop-blur-sm rounded-full shadow-lg px-8 py-4 grid grid-cols-3 items-center">
-          {/* Logo - Alinhado à esquerda */}
-          <div className="flex items-center gap-2 justify-start">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <svg
-                className="w-5 h-5 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                />
-              </svg>
-            </div>
-            <Link href="/" className="text-xl font-bold text-gray-900">
-              Dr. Vitor Ricardo
+    <header className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
+      <nav className="container mx-auto max-w-3xl">
+        <div className="bg-white/95 backdrop-blur-sm rounded-full shadow-lg px-4 py-2 grid grid-cols-3 items-center">
+          {/* Logo - Esquerda */}
+          <div className="flex justify-start">
+            <Link href="/" className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
+              <span className="text-white font-bold text-sm">VR</span>
             </Link>
           </div>
 
-          {/* Links de Navegação - Centralizados */}
-          <div className="hidden md:flex items-center justify-center gap-6">
-            <a
-              href="#sobre"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-            >
+          {/* Links de Navegação - Centro */}
+          <div className="hidden md:flex items-center justify-center">
+            <a href="#sobre" className="px-3 py-1.5 text-sm text-gray-600 hover:text-primary transition-colors">
               Sobre
             </a>
-            <a
-              href="#especialidades"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-            >
-              Especialidades
-            </a>
-            <a
-              href="#tratamentos"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-            >
+            <a href="#tratamentos" className="px-3 py-1.5 text-sm text-gray-600 hover:text-primary transition-colors">
               Tratamentos
             </a>
-            <a
-              href="#faq"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-            >
+            <a href="#faq" className="px-3 py-1.5 text-sm text-gray-600 hover:text-primary transition-colors">
               FAQ
             </a>
-            <a
-              href="#contato"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-            >
-              Contato
+            <a href="#hospitais" className="px-3 py-1.5 text-sm text-gray-600 hover:text-primary transition-colors">
+              Hospitais
             </a>
           </div>
 
-          {/* Botão de Ação - Alinhado à direita */}
+          {/* Botão de Ação - Direita */}
           <div className="hidden md:flex justify-end">
             <a
-              href="#contato"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gray-900 text-white font-medium text-sm hover:bg-gray-800 transition-all"
+              href="https://wa.me/5511912278540"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-1.5 rounded-full bg-gray-900 text-white text-sm hover:bg-gray-800 transition-colors"
             >
               Agendar Consulta →
             </a>

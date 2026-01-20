@@ -81,7 +81,7 @@ export default function Hospitals() {
   }, []);
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section id="hospitais" className="py-20 bg-white overflow-hidden">
       <div className="mb-16 px-6 md:px-12">
         <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4">
           Hospitais em que atuo
