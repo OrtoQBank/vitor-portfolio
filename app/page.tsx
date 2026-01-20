@@ -7,23 +7,20 @@ import About from "./components/About";
 import Hospitals from "./components/Hospitals";
 import FAQ from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <div>
       <HeroSection />
+      <FinalCTA />
       
-      <DifferenceSection />
       <Stats />
       <Specialties />
       <About />
       <TrustBadges />
       <Hospitals />
-      
       <FAQ />
-      <FinalCTA />
-      <Footer />
+      <DifferenceSection />
     </div>
   );
 }
