@@ -5,18 +5,14 @@ export default function HeroSection() {
     <section className="relative min-h-screen bg-linear-to-b from-[#4a5d8f] via-[#6b7ca8] to-[#b8c5e0] overflow-hidden">
       {/* Hero Content */}
       <div className="container mx-auto max-w-5xl px-6 pt-42 pb-8 text-center relative z-20">
-        <p className="text-lg md:text-xl text-white/90 mb-4 font-light">
-          Bem-vindo ao consultório
-        </p>
+        
         <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight tracking-tight">
           Dr. Vitor Ricardo
         </h1>
         <p className="text-2xl md:text-3xl text-white/95 mb-6 font-light">
           Especialista em Cirurgia do Joelho
         </p>
-        <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-          Tratamento da artrose do joelho, prótese total do joelho e artroscopia.
-        </p>
+        
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <a
             href="#contato"

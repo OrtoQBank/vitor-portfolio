@@ -10,13 +10,6 @@ interface ContactAnimationProps {
   sectionRef: React.RefObject<HTMLElement | null>;
 }
 
-const ANIMATION_CONFIG = {
-  initial: { y: 150, scale: 0.7 },
-  final: { y: 0, scale: 1 },
-  ease: "elastic.out(1, 0.5)",
-  scrub: 1,
-};
-
 const CONTACT_INFO = {
   phone: "5511912278540",
   schedule: "Consulta Presencial: Seg a Sex, 8h às 18h",
@@ -27,26 +20,40 @@ export default function ContactAnimation({ sectionRef }: ContactAnimationProps) 
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current || !cardRef.current) return;
+    const section = sectionRef.current;
+    const card = cardRef.current;
+    
+    if (!section || !card) return;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        cardRef.current,
-        ANIMATION_CONFIG.initial,
-        {
-          ...ANIMATION_CONFIG.final,
-          ease: ANIMATION_CONFIG.ease,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "center top",
-            scrub: ANIMATION_CONFIG.scrub,
-          },
-        }
-      );
+    // Define estado inicial - invisível
+    gsap.set(card, {
+      y: 100,
+      opacity: 0,
+      scale: 0.8,
     });
 
-    return () => ctx.revert();
+    // Cria a animação com ScrollTrigger
+    const animation = gsap.to(card, {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      duration: 1.8,
+      delay: 0.3,
+      ease: "power3.out",
+      paused: true,
+    });
+
+    // ScrollTrigger para disparar quando seção toca o topo
+    const trigger = ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      onEnter: () => animation.play(),
+    });
+
+    return () => {
+      trigger.kill();
+      animation.kill();
+    };
   }, [sectionRef]);
 
   return (

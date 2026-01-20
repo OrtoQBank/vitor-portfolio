@@ -167,41 +167,6 @@ export default function Specialties() {
             ))}
           </div>
         </div>
-
-        {/* CTA Final */}
-        <div className="relative bg-gradient-to-br from-primary to-primary/80 rounded-[3rem] p-16 text-center overflow-hidden">
-          {/* Elementos decorativos */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-          
-          <div className="relative z-10">
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Precisa de uma avaliação?
-            </h3>
-            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-              Agende uma consulta para discutirmos o melhor tratamento para o seu caso específico.
-            </p>
-            <a
-              href="#contato"
-              className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-white text-primary font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl"
-            >
-              Agendar Consulta
-              <svg
-                className="w-5 h-5 ml-3"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
