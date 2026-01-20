@@ -11,8 +11,8 @@ const jakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Vitor - Cirurgia de Joelho",
-  description: "Especialista em cirurgia de joelho. Tratamento de artrose e lesões esportivas com excelência e cuidado.",
+  title: "Dr. Vitor Ricardo - Especialista em Cirurgia do Joelho",
+  description: "Dr. Vitor Ricardo - Cirurgião ortopedista especialista em cirurgia do joelho. Tratamento da artrose do joelho, prótese total do joelho e artroscopia. CRM-SP 226.708 | RQE 136.623",
 };
 
 export default function RootLayout({

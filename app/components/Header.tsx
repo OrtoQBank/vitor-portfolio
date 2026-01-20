@@ -23,52 +23,52 @@ export default function Header() {
               </svg>
             </div>
             <Link href="/" className="text-xl font-bold text-gray-900">
-              Dr. Vitor
+              Dr. Vitor Ricardo
             </Link>
           </div>
 
           {/* Links de Navegação - Centralizados */}
           <div className="hidden md:flex items-center justify-center gap-6">
-            <Link
-              href="/sobre"
+            <a
+              href="#sobre"
               className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
             >
               Sobre
-            </Link>
-            <Link
-              href="/servicos"
+            </a>
+            <a
+              href="#especialidades"
               className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
             >
-              Serviços
-            </Link>
-            <Link
-              href="/blog"
+              Especialidades
+            </a>
+            <a
+              href="#tratamentos"
               className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
             >
-              Blog
-            </Link>
-            <Link
-              href="/faq"
+              Tratamentos
+            </a>
+            <a
+              href="#faq"
               className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
             >
               FAQ
-            </Link>
-            <Link
-              href="/contato"
+            </a>
+            <a
+              href="#contato"
               className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
             >
               Contato
-            </Link>
+            </a>
           </div>
 
           {/* Botão de Ação - Alinhado à direita */}
           <div className="hidden md:flex justify-end">
-            <Link
-              href="/contato"
+            <a
+              href="#contato"
               className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gray-900 text-white font-medium text-sm hover:bg-gray-800 transition-all"
             >
               Agendar Consulta →
-            </Link>
+            </a>
           </div>
         </div>
       </nav>

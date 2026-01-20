@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,8 +102,8 @@ export default function TestimonialCards({
           ref={leftCardRef}
           className="pointer-events-auto h-full flex flex-col justify-center"
         >
-          <Link
-            href="/servicos"
+          <a
+            href="#especialidades"
             className="block w-full max-w-[400px] h-[320px] bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 overflow-hidden p-6 transition-transform hover:scale-[1.02] active:scale-[0.98] flex flex-col justify-between"
           >
             <div className="flex items-start gap-4 mb-4">
@@ -146,7 +145,7 @@ export default function TestimonialCards({
                 Diagnóstico preciso
               </li>
             </ul>
-          </Link>
+          </a>
         </div>
 
         {/* Card Esportes */}
@@ -154,8 +153,8 @@ export default function TestimonialCards({
           ref={rightCardRef}
           className="pointer-events-auto h-full flex flex-col justify-center"
         >
-          <Link
-            href="/servicos"
+          <a
+            href="#especialidades"
             className="block w-full max-w-[400px] h-[320px] bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 overflow-hidden p-6 transition-transform hover:scale-[1.02] active:scale-[0.98] flex flex-col justify-between"
           >
             <div className="flex items-start gap-4 mb-4">
@@ -197,7 +196,7 @@ export default function TestimonialCards({
                 Lesões meniscais
               </li>
             </ul>
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -206,9 +205,10 @@ export default function TestimonialCards({
         ref={whatsappCardRef}
         className="pointer-events-auto absolute z-20 top-1/2 left-1/2 -translate-x-1/2 w-full max-w-[600px] mt-80"
       >
-        <Link
-          href="https://wa.me/5511999999999"
+        <a
+          href="https://wa.me/5511912278540"
           target="_blank"
+          rel="noopener noreferrer"
           className="block bg-green-500/90 backdrop-blur-md rounded-[3rem] shadow-2xl overflow-hidden p-8 text-center transform transition-transform hover:scale-[1.02] active:scale-[0.98] border-4 border-white/20"
         >
           <div className="flex items-center gap-8 text-left">
@@ -231,7 +231,7 @@ export default function TestimonialCards({
               Iniciar Conversa
             </div>
           </div>
-        </Link>
+        </a>
       </div>
     </div>
   );

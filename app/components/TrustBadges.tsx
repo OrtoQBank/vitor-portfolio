@@ -3,33 +3,28 @@
 import LogoLoop from "../shared/LogoLoop";
 
 export default function TrustBadges() {
+  const achievementText = "Top 1 Ortopedia - Exame SBOT";
+  
   const badges = [
-    { node: <span className="text-gray-400 font-bold text-2xl">SBOT</span> },
-    { node: <span className="text-gray-400 font-bold text-2xl">SBCJ</span> },
-    { node: <span className="text-gray-400 font-bold text-2xl">ISAKOS</span> },
-    { node: <span className="text-gray-400 font-bold text-2xl">SLARD</span> },
-    { node: <span className="text-gray-400 font-bold text-2xl">AMB</span> },
+    { node: <span className="text-gray-900 font-normal text-5xl md:text-6xl lg:text-7xl whitespace-nowrap">{achievementText}</span> },
+    { node: <span className="text-gray-900 font-normal text-5xl md:text-6xl lg:text-7xl whitespace-nowrap">{achievementText}</span> },
+    
   ];
 
   return (
-    <section className="py-12 px-6 border-y border-gray-200 bg-white">
-      <div className="container mx-auto max-w-6xl">
-        <p className="text-center text-sm text-gray-500 mb-8 uppercase tracking-wide font-medium">
-          Certificações e Associações
-        </p>
-        <div className="opacity-60">
-          <LogoLoop
-            logos={badges}
-            speed={50}
-            direction="left"
-            logoHeight={32}
-            gap={64}
-            pauseOnHover={true}
-            fadeOut={true}
-            fadeOutColor="#ffffff"
-            ariaLabel="Certificações e Associações"
-          />
-        </div>
+    <section className="py-16 px-6 border-y border-gray-200 bg-white overflow-hidden">
+      <div className="w-full">
+        <LogoLoop
+          logos={badges}
+          speed={60}
+          direction="left"
+          logoHeight={80}
+          gap={100}
+          pauseOnHover={false}
+          fadeOut={false}
+          fadeOutColor="#ffffff"
+          ariaLabel="Top 1 Ortopedia - Exame SBOT"
+        />
       </div>
     </section>
   );
