@@ -5,8 +5,6 @@ import Stats from "./components/Stats";
 import Specialties from "./components/Specialties";
 import About from "./components/About";
 import Hospitals from "./components/Hospitals";
-import Treatments from "./components/Treatments";
-import FeaturedCTA from "./components/FeaturedCTA";
 import FAQ from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
@@ -22,8 +20,7 @@ export default function Home() {
       <About />
       <TrustBadges />
       <Hospitals />
-      <Treatments />
-      <FeaturedCTA />
+      
       <FAQ />
       <FinalCTA />
       <Footer />
