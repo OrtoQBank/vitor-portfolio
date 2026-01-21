@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stats = [
+const stats: { value: number; suffix: string; label: string; prefix?: string }[] = [
   { value: 2000, suffix: "+", label: "CIRURGIAS REALIZADAS" },
   { value: 15, suffix: "+", label: "ANOS DE EXPERIÊNCIA" },
   { value: 1500, suffix: "+", label: "CIRURGIAS DE ARTROSE" },
