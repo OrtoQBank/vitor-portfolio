@@ -91,7 +91,7 @@ class Title {
     plane,
     renderer,
     text,
-    textColor = "#545050",
+    textColor = "#38463e", // --foreground from global palette (WebGL requires hex)
     font = "30px sans-serif",
   }: TitleProps) {
     autoBind(this);
@@ -457,7 +457,7 @@ class App {
     {
       items,
       bend = 1,
-      textColor = "#ffffff",
+      textColor = "#e8e6e0", // --dark-foreground from global palette (WebGL requires hex)
       borderRadius = 0,
       font = "bold 30px Figtree",
       scrollSpeed = 2,
@@ -711,7 +711,7 @@ interface CircularGalleryProps {
 export default function CircularGallery({
   items,
   bend = 3,
-  textColor = "#ffffff",
+  textColor = "#e8e6e0", // --dark-foreground from global palette (WebGL requires hex)
   borderRadius = 0.05,
   font = "bold 30px Figtree",
   scrollSpeed = 2,

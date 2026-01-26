@@ -89,41 +89,41 @@ export default function PinnedSections() {
       <section
         ref={(el) => { panelsRef.current[0] = el; }}
         id="sobre"
-        className="relative h-screen z-10"
+        className="relative h-screen z-10 bg-background"
       >
-        <div className="h-screen w-full bg-blue-50 flex px-0 overflow-hidden">
+        <div className="h-screen w-full flex px-0 overflow-hidden">
           {/* Lado Esquerdo - Nome, Stats, Formação e Atuação */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-20 py-12">
             
             
-            <h2 className="text-7xl md:text-8xl lg:text-9xl font-bold text-gray-900 tracking-tighter leading-[0.9] mb-12">
+            <h2 className="text-7xl md:text-8xl lg:text-9xl font-bold text-foreground tracking-tighter leading-[0.9] mb-12">
               Dr. Vitor<br />Ricardo
             </h2>
 
             {/* Linha divisória */}
-            <div className="w-full h-px bg-gray-400 mb-8" />
+            <div className="w-full h-px bg-border mb-8" />
 
             {/* Formação - Grid de texto com mais ênfase */}
             <div className="grid grid-cols-2 gap-x-16 gap-y-6">
               <div>
-                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">GRADUAÇÃO</p>
-                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Formado em Medicina pela USP, universidade mais respeitada da América Latina.</p>
+                <p className="text-sm font-bold tracking-[0.1em] text-foreground-subtle uppercase mb-2">GRADUAÇÃO</p>
+                <p className="text-xl md:text-2xl font-bold text-foreground leading-tight">Formado em Medicina pela USP, universidade mais respeitada da América Latina.</p>
               </div>
               <div>
-                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">RESIDÊNCIA</p>
-                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Instituto de Ortopedia e Traumatologia do HC-FMUSP, maior centro de referência em ortopedia do país.</p>
+                <p className="text-sm font-bold tracking-[0.1em] text-foreground-subtle uppercase mb-2">RESIDÊNCIA</p>
+                <p className="text-xl md:text-2xl font-bold text-foreground leading-tight">Instituto de Ortopedia e Traumatologia do HC-FMUSP, maior centro de referência em ortopedia do país.</p>
               </div>
               <div>
-                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">TÍTULO SBOT</p>
-                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Conquistou o 1º lugar nacional no exame de título de especialista da SBOT.</p>
+                <p className="text-sm font-bold tracking-[0.1em] text-foreground-subtle uppercase mb-2">TÍTULO SBOT</p>
+                <p className="text-xl md:text-2xl font-bold text-foreground leading-tight">Conquistou o 1º lugar nacional no exame de título de especialista da SBOT.</p>
               </div>
               <div>
-                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">ESPECIALIZAÇÃO</p>
-                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Especialização em Cirurgia do Joelho no IOT-HCFMUSP, com foco em artrose do joelho, prótese total do joelho e artroscopia.</p>
+                <p className="text-sm font-bold tracking-[0.1em] text-foreground-subtle uppercase mb-2">ESPECIALIZAÇÃO</p>
+                <p className="text-xl md:text-2xl font-bold text-foreground leading-tight">Especialização em Cirurgia do Joelho no IOT-HCFMUSP, com foco em artrose do joelho, prótese total do joelho e artroscopia.</p>
               </div>
               <div>
-                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">PRECEPTOR USP</p>
-                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Preceptor da Residência Médica e Graduação na Faculdade de Medicina da USP.</p>
+                <p className="text-sm font-bold tracking-[0.1em] text-foreground-subtle uppercase mb-2">PRECEPTOR USP</p>
+                <p className="text-xl md:text-2xl font-bold text-foreground leading-tight">Preceptor da Residência Médica e Graduação na Faculdade de Medicina da USP.</p>
               </div>
             </div>
           </div>
@@ -135,16 +135,16 @@ export default function PinnedSections() {
       <section
         ref={(el) => { panelsRef.current[1] = el; }}
         id="jornada"
-        className="relative h-screen z-15"
+        className="relative h-screen z-15 bg-card"
       >
-        <div className="h-screen w-full bg-white flex px-0 overflow-hidden">
+        <div className="h-screen w-full flex px-0 overflow-hidden">
           {/* Lado Esquerdo - Foto do Médico + 3 Cards */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-20 py-12">
             
             {/* Foto do Médico - Placeholder */}
-            <div className="relative w-64 h-[45vh] mb-8 rounded-2xl overflow-hidden bg-gray-200 border-2 border-dashed border-gray-400 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <svg className="w-12 h-12 mx-auto mb-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="relative w-64 h-[45vh] mb-8 rounded-2xl overflow-hidden bg-muted border-2 border-dashed border-border flex items-center justify-center">
+              <div className="text-center text-foreground-subtle">
+                <svg className="w-12 h-12 mx-auto mb-3 text-border" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <p className="text-sm font-medium">Foto do Médico</p>
@@ -153,45 +153,45 @@ export default function PinnedSections() {
 
             {/* 3 Cards */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 text-center">
+              <div className="bg-muted rounded-xl p-5 border border-border text-center">
                 <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center text-primary">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <p className="text-sm font-bold text-gray-900 mb-2">Formação de Excelência</p>
-                <p className="text-sm text-gray-600 leading-tight">Formação completa na Universidade de São Paulo, considerada a melhor instituição do país.</p>
+                <p className="text-sm font-bold text-foreground mb-2">Formação de Excelência</p>
+                <p className="text-sm text-foreground-muted leading-tight">Formação completa na Universidade de São Paulo, considerada a melhor instituição do país.</p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 text-center">
+              <div className="bg-muted rounded-xl p-5 border border-border text-center">
                 <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center text-primary">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-2.998 0" />
                   </svg>
                 </div>
-                <p className="text-sm font-bold text-gray-900 mb-2">Tratamentos Modernos</p>
-                <p className="text-sm text-gray-600 leading-tight">Técnicas minimamente invasivas e tecnologia de ponta.</p>
+                <p className="text-sm font-bold text-foreground mb-2">Tratamentos Modernos</p>
+                <p className="text-sm text-foreground-muted leading-tight">Técnicas minimamente invasivas e tecnologia de ponta.</p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 text-center">
+              <div className="bg-muted rounded-xl p-5 border border-border text-center">
                 <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center text-primary">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                   </svg>
                 </div>
-                <p className="text-sm font-bold text-gray-900 mb-2">Atendimento Humanizado</p>
-                <p className="text-sm text-gray-600 leading-tight">Cuidado personalizado para cada paciente.</p>
+                <p className="text-sm font-bold text-foreground mb-2">Atendimento Humanizado</p>
+                <p className="text-sm text-foreground-muted leading-tight">Cuidado personalizado para cada paciente.</p>
               </div>
             </div>
           </div>
 
           {/* Lado Direito - Minha Jornada */}
           <div className="hidden lg:flex w-1/2 h-full flex-col justify-center px-16 xl:px-20 py-16">
-            <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-4">Minha Jornada</p>
+            <p className="text-sm font-bold tracking-[0.1em] text-foreground-subtle uppercase mb-4">Minha Jornada</p>
             
-            <h3 className="text-5xl xl:text-6xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-12">
+            <h3 className="text-5xl xl:text-6xl font-bold text-foreground tracking-tight leading-[1.1] mb-12">
               Excelência técnica e cuidado centrado no paciente
             </h3>
 
-            <div className="space-y-6 text-xl text-gray-700 leading-relaxed font-medium">
+            <div className="space-y-6 text-xl text-foreground-muted leading-relaxed font-medium">
               <p>
                 Desde cedo me interessei pelo estudo da artrose, motivado pelo impacto que essa condição exerce na qualidade de vida dos pacientes. Durante a residência médica, esse interesse se consolidou, direcionando minha formação para o tratamento com foco na recuperação da mobilidade e bem-estar.
               </p>
@@ -213,11 +213,11 @@ export default function PinnedSections() {
       <section
         ref={(el) => { panelsRef.current[2] = el; }}
         id="tratamentos"
-        className="relative h-screen z-20"
+        className="relative h-screen z-20 bg-[#2a332c]"
       >
-        <div className="h-screen w-full bg-neutral-900 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12 overflow-hidden">
+        <div className="h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12 overflow-hidden">
           {/* Título */}
-          <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-stone-200 tracking-tighter leading-[0.9] mb-12">
+          <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9] mb-12">
             Áreas de Atuação
           </h2>
 
@@ -226,22 +226,22 @@ export default function PinnedSections() {
             {treatments.map((treatment, index) => (
               <div key={index}>
                 {/* Linha divisória */}
-                <div className="w-full h-px bg-stone-700 mb-6" />
+                <div className="w-full h-px bg-[#3a4a3e] mb-6" />
                 
                 {/* Título do tratamento */}
-                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-200 leading-tight mb-4">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#e8e6e0] leading-tight mb-4">
                   {treatment.title}
                 </p>
                 
                 {/* Descrição */}
-                <p className="text-lg md:text-xl text-stone-400 leading-relaxed mb-6">
+                <p className="text-lg md:text-xl text-[#a8b09e] leading-relaxed mb-6">
                   {treatment.description}
                 </p>
               </div>
             ))}
             
             {/* Linha divisória final */}
-            <div className="w-full h-px bg-stone-700" />
+            <div className="w-full h-px bg-[#3a4a3e]" />
           </div>
         </div>
       </section>
@@ -250,25 +250,25 @@ export default function PinnedSections() {
       <section
         ref={(el) => { panelsRef.current[3] = el; }}
         id="faq"
-        className="relative h-screen z-30"
+        className="relative h-screen z-30 bg-muted"
       >
-        <div className="h-screen w-full bg-stone-100 flex items-center px-8 md:px-16 lg:px-24 py-12 overflow-hidden">
+        <div className="h-screen w-full flex items-center px-8 md:px-16 lg:px-24 py-12 overflow-hidden">
           <div className="container mx-auto max-w-5xl">
-            <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 tracking-tighter leading-[0.9] mb-12">
+            <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tighter leading-[0.9] mb-12">
               Dúvidas<br />Frequentes
             </h2>
 
             {/* FAQ - Abre com hover */}
-            <div className="space-y-0 border-t border-gray-400">
+            <div className="space-y-0 border-t border-border">
               {faqs.map((faq, index) => (
-                <div key={index} className="group border-b border-gray-400">
+                <div key={index} className="group border-b border-border">
                   <div className="flex items-center justify-between py-6 cursor-default transition-all duration-300 group-hover:pl-2">
-                    <span className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">{faq.q}</span>
-                    <span className="text-3xl font-bold text-gray-400 group-hover:text-primary group-hover:rotate-45 transition-all duration-300 shrink-0 ml-4">+</span>
+                    <span className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">{faq.q}</span>
+                    <span className="text-3xl font-bold text-border group-hover:text-primary group-hover:rotate-45 transition-all duration-300 shrink-0 ml-4">+</span>
                   </div>
                   <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
                     <div className="overflow-hidden">
-                      <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium pb-6 pr-12 pl-2">{faq.a}</p>
+                      <p className="text-lg md:text-xl text-foreground-muted leading-relaxed font-medium pb-6 pr-12 pl-2">{faq.a}</p>
                     </div>
                   </div>
                 </div>
@@ -282,11 +282,11 @@ export default function PinnedSections() {
       <section
         ref={(el) => { panelsRef.current[4] = el; }}
         id="hospitais"
-        className="relative h-screen z-40"
+        className="relative h-screen z-40 bg-[#1f2621]"
       >
-        <div className="h-screen w-full bg-neutral-950 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
+        <div className="h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
           <div className="mb-8">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter leading-[0.9]">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9]">
               Hospitais Onde Atuo
             </h2>
           </div>
@@ -303,9 +303,9 @@ export default function PinnedSections() {
                   alt={hospital.name}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <h3 className="text-sm md:text-base lg:text-lg font-medium text-white leading-tight">
+                <div className="absolute inset-0 bg-[#1f2621]/30" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#1f2621]/80 to-transparent">
+                  <h3 className="text-sm md:text-base lg:text-lg font-medium text-[#e8e6e0] leading-tight">
                     {hospital.name}
                   </h3>
                 </div>
@@ -319,15 +319,15 @@ export default function PinnedSections() {
       <section
         ref={(el) => { panelsRef.current[5] = el; }}
         id="depoimentos"
-        className="relative h-screen z-50"
+        className="relative h-screen z-50 bg-card"
       >
-        <div className="h-screen w-full bg-white flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
+        <div className="h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
           <div className="container mx-auto max-w-6xl">
             <div className="mb-12">
-              <p className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
+              <p className="text-sm font-bold tracking-widest text-foreground-subtle uppercase mb-4">
                 Depoimentos
               </p>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tighter leading-[0.9]">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tighter leading-[0.9]">
                 O que dizem<br />nossos pacientes
               </h2>
             </div>
@@ -337,7 +337,7 @@ export default function PinnedSections() {
               {testimonials.map((testimonial, index) => (
                 <div 
                   key={index} 
-                  className="bg-gray-50 rounded-2xl p-8 border border-gray-200"
+                  className="bg-muted rounded-2xl p-8 border border-border"
                 >
                   {/* Ícone de aspas */}
                   <svg className="w-10 h-10 text-primary/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
@@ -345,14 +345,14 @@ export default function PinnedSections() {
                   </svg>
                   
                   {/* Texto do depoimento */}
-                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  <p className="text-lg text-foreground-muted leading-relaxed mb-6">
                     &ldquo;{testimonial.text}&rdquo;
                   </p>
                   
                   {/* Info do paciente */}
-                  <div className="border-t border-gray-200 pt-6">
-                    <p className="font-bold text-gray-900">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.procedure}</p>
+                  <div className="border-t border-border pt-6">
+                    <p className="font-bold text-foreground">{testimonial.name}</p>
+                    <p className="text-sm text-foreground-subtle">{testimonial.procedure}</p>
                   </div>
                 </div>
               ))}
@@ -365,21 +365,21 @@ export default function PinnedSections() {
       <section
         ref={(el) => { panelsRef.current[6] = el; }}
         id="localizacao"
-        className="relative h-screen z-[60]"
+        className="relative h-screen z-[60] bg-muted"
       >
-        <div className="h-screen w-full bg-stone-100 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
+        <div className="h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-8">
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tighter leading-[0.9] mb-4">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tighter leading-[0.9] mb-4">
                 Localização do Consultório
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-foreground-muted">
                 Escolha a opção mais conveniente para você e agende sua consulta.
               </p>
             </div>
 
             {/* Mapa */}
-            <div className="w-full h-[35vh] rounded-2xl overflow-hidden mb-6 bg-gray-300">
+            <div className="w-full h-[35vh] rounded-2xl overflow-hidden mb-6 bg-border">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975885850455!2d-46.6565!3d-23.5617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQyLjEiUyA0NsKwMzknMjMuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
                 width="100%"
@@ -395,7 +395,7 @@ export default function PinnedSections() {
             {/* Info Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Consultório Presencial */}
-              <div className="bg-white rounded-xl p-5 border border-gray-200">
+              <div className="bg-card rounded-xl p-5 border border-border">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -404,15 +404,15 @@ export default function PinnedSections() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">Consultório Presencial</h3>
-                    <p className="text-gray-600 text-sm">Rua Teste, 123 - Bairro</p>
-                    <p className="text-gray-600 text-sm">São Paulo - SP</p>
+                    <h3 className="text-lg font-bold text-foreground mb-1">Consultório Presencial</h3>
+                    <p className="text-foreground-muted text-sm">Rua Teste, 123 - Bairro</p>
+                    <p className="text-foreground-muted text-sm">São Paulo - SP</p>
                   </div>
                 </div>
               </div>
 
               {/* Consulta Online */}
-              <div className="bg-white rounded-xl p-5 border border-gray-200">
+              <div className="bg-card rounded-xl p-5 border border-border">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -420,9 +420,9 @@ export default function PinnedSections() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">Consulta Online</h3>
-                    <p className="text-gray-600 text-sm">Atendimento por videochamada</p>
-                    <p className="text-gray-600 text-sm">Disponível em todo o Brasil</p>
+                    <h3 className="text-lg font-bold text-foreground mb-1">Consulta Online</h3>
+                    <p className="text-foreground-muted text-sm">Atendimento por videochamada</p>
+                    <p className="text-foreground-muted text-sm">Disponível em todo o Brasil</p>
                   </div>
                 </div>
               </div>
@@ -435,30 +435,30 @@ export default function PinnedSections() {
       <section
         ref={(el) => { panelsRef.current[7] = el; }}
         id="contato"
-        className="relative h-screen z-[70]"
+        className="relative h-screen z-[70] bg-[#2a332c]"
       >
-        <div className="h-screen w-full bg-neutral-900 flex flex-col">
+        <div className="h-screen w-full flex flex-col">
           {/* Conteúdo Central */}
           <div className="flex-1 flex items-center justify-center px-8 md:px-16 lg:px-24">
             <div className="text-center max-w-3xl">
-              <p className="text-sm font-bold tracking-widest text-gray-400 uppercase mb-4">
+              <p className="text-sm font-bold tracking-widest text-[#a8b09e] uppercase mb-4">
                 Entre em Contato
               </p>
               
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter leading-[0.9] mb-6">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9] mb-6">
                 Agende sua Consulta
               </h2>
               
-              <p className="text-lg text-gray-400 mb-10 max-w-xl mx-auto">
+              <p className="text-lg text-[#a8b09e] mb-10 max-w-xl mx-auto">
                 Estamos prontos para atender você. Entre em contato pelo WhatsApp para agendar sua consulta de forma rápida e prática.
               </p>
 
-              {/* Botão WhatsApp */}
+              {/* Botão WhatsApp - cor oficial da marca */}
               <a
                 href="https://wa.me/5511912270540"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl mb-10"
+                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl mb-10"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -467,7 +467,7 @@ export default function PinnedSections() {
               </a>
 
               {/* Telefone */}
-              <div className="flex items-center justify-center gap-2 text-gray-400 mb-8">
+              <div className="flex items-center justify-center gap-2 text-[#a8b09e] mb-8">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
@@ -480,7 +480,7 @@ export default function PinnedSections() {
                   href="https://instagram.com/drvitorricardo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/20 transition-all"
+                  className="w-12 h-12 rounded-full bg-[#e8e6e0]/10 flex items-center justify-center text-[#a8b09e] hover:text-[#e8e6e0] hover:bg-[#e8e6e0]/20 transition-all"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -492,14 +492,14 @@ export default function PinnedSections() {
           </div>
 
           {/* Footer */}
-          <div className="py-6 px-8 md:px-16 lg:px-24 border-t border-white/10">
+          <div className="py-6 px-8 md:px-16 lg:px-24 border-t border-[#3a4a3e]">
             <div className="container mx-auto max-w-6xl flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-gray-500 text-center md:text-left">
+              <p className="text-sm text-[#a8b09e] text-center md:text-left">
                 © 2026 Dr. Vitor Ricardo. Todos os direitos reservados. | CRM-SP: 226.708 | RQE: 136.623
               </p>
-              <div className="flex gap-6 text-sm text-gray-500">
-                <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
-                <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+              <div className="flex gap-6 text-sm text-[#a8b09e]">
+                <a href="#" className="hover:text-[#e8e6e0] transition-colors">Termos de Uso</a>
+                <a href="#" className="hover:text-[#e8e6e0] transition-colors">Política de Privacidade</a>
               </div>
             </div>
           </div>

@@ -63,23 +63,23 @@ export default function About() {
     <section
       ref={sectionRef}
       id="sobre"
-      className="min-h-[150vh] relative bg-gradient-to-br from-blue-50 via-white to-purple-50"
+      className="min-h-[150vh] relative bg-background"
     >
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center px-6 py-20">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-6xl md:text-8xl font-bold text-gray-900 mb-6">
+            <h2 className="text-6xl md:text-8xl font-bold text-foreground mb-6">
               Sobre o médico
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-foreground-muted max-w-3xl mx-auto leading-relaxed">
               Conheça o Dr. Vitor Ricardo
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto mb-16">
             <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Formação</h3>
-              <ul className="space-y-3 text-gray-700 text-base leading-relaxed">
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Formação</h3>
+              <ul className="space-y-3 text-foreground-muted text-base leading-relaxed">
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-2"></span>
                   <span>Graduado em Medicina pela Universidade de São Paulo (USP)</span>
@@ -108,8 +108,8 @@ export default function About() {
             </div>
 
             <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Minha Jornada</h3>
-              <div className="space-y-4 text-gray-700 text-base leading-relaxed">
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Minha Jornada</h3>
+              <div className="space-y-4 text-foreground-muted text-base leading-relaxed">
                 <p>
                   Desde cedo me interessei pelo estudo da artrose, motivado pelo impacto que essa condição exerce na qualidade de vida dos pacientes. Durante a residência médica, esse interesse se consolidou, direcionando minha formação para o tratamento com foco na recuperação da mobilidade e bem-estar.
                 </p>
@@ -127,7 +127,7 @@ export default function About() {
           </div>
 
           {/* Stats integrado */}
-          <div ref={statsRef} className="border-t border-gray-200 pt-12">
+          <div ref={statsRef} className="border-t border-border pt-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {stats.map((stat, index) => (
                 <div key={index}>
@@ -139,7 +139,7 @@ export default function About() {
                   >
                     {stat.prefix || ""}0{stat.suffix || ""}
                   </div>
-                  <p className="text-gray-600 font-medium text-sm md:text-base">{stat.label}</p>
+                  <p className="text-foreground-muted font-medium text-sm md:text-base">{stat.label}</p>
                 </div>
               ))}
             </div>

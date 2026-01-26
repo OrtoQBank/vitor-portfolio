@@ -6,22 +6,22 @@ export default function Header() {
       <nav className="container mx-auto max-w-6xl">
         <div className="flex items-center justify-center gap-10">
           {/* Logo */}
-          <Link href="/" className="text-3xl font-black text-gray-900 hover:text-primary transition-colors mr-8">
+          <Link href="/" className="text-3xl font-black text-foreground hover:text-primary transition-colors mr-8">
             VR
           </Link>
 
           {/* Links de Navegação - Centro */}
           <div className="hidden md:flex items-center gap-12">
-            <a href="#sobre" className="text-lg font-semibold text-gray-800 hover:text-gray-900 transition-colors">
+            <a href="#sobre" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
               Sobre
             </a>
-            <a href="#tratamentos" className="text-lg font-semibold text-gray-800 hover:text-gray-900 transition-colors">
+            <a href="#tratamentos" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
               Tratamentos
             </a>
-            <a href="#faq" className="text-lg font-semibold text-gray-800 hover:text-gray-900 transition-colors">
+            <a href="#faq" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
               FAQ
             </a>
-            <a href="#hospitais" className="text-lg font-semibold text-gray-800 hover:text-gray-900 transition-colors">
+            <a href="#hospitais" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
               Hospitais
             </a>
           </div>
@@ -29,7 +29,7 @@ export default function Header() {
           {/* Botão de Ação */}
           <a
             href="#contato"
-            className="hidden md:block text-lg font-bold text-gray-900 hover:text-primary transition-colors ml-8"
+            className="hidden md:block text-lg font-bold text-foreground hover:text-primary transition-colors ml-8"
           >
             Agendar Consulta →
           </a>

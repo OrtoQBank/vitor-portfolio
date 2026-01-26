@@ -1,38 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #d3dcf2;
-  --foreground: #6a6c70;
+  /* NEW OFFICIAL COLOR PALETTE */
+  --background: #f6f4ee;
+  --background-gradient: linear-gradient(to right, #f6f4ee 0%, #be95be 100%);
+  --foreground: #38463e;
+  --foreground-muted: #5a6b5e;
+  --foreground-subtle: #7a8b7e;
   --card: #ffffff;
-  --card-foreground: #312e81;
+  --card-foreground: #38463e;
   --popover: #ffffff;
-  --popover-foreground: #312e81;
-  --primary: #4b699c;
+  --popover-foreground: #38463e;
+  --primary: #6d795d;
   --primary-foreground: #ffffff;
-  --secondary: #7690cf;
+  --secondary: #8a9579;
   --secondary-foreground: #ffffff;
-  --muted: #9197a6;
-  --muted-foreground: #6a6c70;
-  --accent: #7690cf;
+  --muted: #e8e6e0;
+  --muted-foreground: #5a6b5e;
+  --accent: #6d795d;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #9197a6;
-  --input: #9197a6;
-  --ring: #4b699c;
-  --chart-1: #8b5cf6;
-  --chart-2: #7c3aed;
-  --chart-3: #6d28d9;
-  --chart-4: #5b21b6;
-  --chart-5: #4c1d95;
-  --sidebar: #f5f3ff;
-  --sidebar-foreground: #312e81;
-  --sidebar-primary: #8b5cf6;
+  --border: #c5ccc0;
+  --border-muted: #d5d3cd;
+  --input: #c5ccc0;
+  --ring: #6d795d;
+  /* Dark section colors */
+  --dark-bg: #2a332c;
+  --dark-bg-deep: #1f2621;
+  --dark-foreground: #e8e6e0;
+  --dark-foreground-muted: #a8b09e;
+  --dark-border: #3a4a3e;
+  --chart-1: #6d795d;
+  --chart-2: #8a9579;
+  --chart-3: #5a6b5e;
+  --chart-4: #4a5a4e;
+  --chart-5: #3a4a3e;
+  --sidebar: #f6f4ee;
+  --sidebar-foreground: #38463e;
+  --sidebar-primary: #6d795d;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #dbeafe;
-  --sidebar-accent-foreground: #1e40af;
-  --sidebar-border: #e0e7ff;
-  --sidebar-ring: #8b5cf6;
+  --sidebar-accent: #e8e6e0;
+  --sidebar-accent-foreground: #38463e;
+  --sidebar-border: #d5d3cd;
+  --sidebar-ring: #6d795d;
   --font-sans: var(--font-main), system-ui, -apple-system, sans-serif;
   --font-serif: "Playfair Display", serif;
   --font-mono: "Fira Code", monospace;
@@ -42,27 +53,30 @@
   --shadow-blur: 4px;
   --shadow-spread: 0px;
   --shadow-opacity: 0.2;
-  --shadow-color: hsl(255 86% 66%);
-  --shadow-2xs: 2px 2px 4px 0px hsl(255 86% 66% / 0.1);
-  --shadow-xs: 2px 2px 4px 0px hsl(255 86% 66% / 0.1);
-  --shadow-sm: 2px 2px 4px 0px hsl(255 86% 66% / 0.2),
-    2px 1px 2px -1px hsl(255 86% 66% / 0.2);
-  --shadow: 2px 2px 4px 0px hsl(255 86% 66% / 0.2),
-    2px 1px 2px -1px hsl(255 86% 66% / 0.2);
-  --shadow-md: 2px 2px 4px 0px hsl(255 86% 66% / 0.2),
-    2px 2px 4px -1px hsl(255 86% 66% / 0.2);
-  --shadow-lg: 2px 2px 4px 0px hsl(255 86% 66% / 0.2),
-    2px 4px 6px -1px hsl(255 86% 66% / 0.2);
-  --shadow-xl: 2px 2px 4px 0px hsl(255 86% 66% / 0.2),
-    2px 8px 10px -1px hsl(255 86% 66% / 0.2);
-  --shadow-2xl: 2px 2px 4px 0px hsl(255 86% 66% / 0.5);
+  --shadow-color: hsl(100 15% 42%);
+  --shadow-2xs: 2px 2px 4px 0px hsl(100 15% 42% / 0.1);
+  --shadow-xs: 2px 2px 4px 0px hsl(100 15% 42% / 0.1);
+  --shadow-sm: 2px 2px 4px 0px hsl(100 15% 42% / 0.2),
+    2px 1px 2px -1px hsl(100 15% 42% / 0.2);
+  --shadow: 2px 2px 4px 0px hsl(100 15% 42% / 0.2),
+    2px 1px 2px -1px hsl(100 15% 42% / 0.2);
+  --shadow-md: 2px 2px 4px 0px hsl(100 15% 42% / 0.2),
+    2px 2px 4px -1px hsl(100 15% 42% / 0.2);
+  --shadow-lg: 2px 2px 4px 0px hsl(100 15% 42% / 0.2),
+    2px 4px 6px -1px hsl(100 15% 42% / 0.2);
+  --shadow-xl: 2px 2px 4px 0px hsl(100 15% 42% / 0.2),
+    2px 8px 10px -1px hsl(100 15% 42% / 0.2);
+  --shadow-2xl: 2px 2px 4px 0px hsl(100 15% 42% / 0.5);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-gradient: var(--background-gradient);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -78,6 +92,7 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-border-muted: var(--border-muted);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);
@@ -93,6 +108,12 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  /* Dark section colors */
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-bg-deep: var(--dark-bg-deep);
+  --color-dark-foreground: var(--dark-foreground);
+  --color-dark-foreground-muted: var(--dark-foreground-muted);
+  --color-dark-border: var(--dark-border);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
