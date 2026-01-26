@@ -6,22 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stats = [
-  { value: 2000, suffix: "+", label: "CIRURGIAS REALIZADAS" },
-  { value: 15, suffix: "+", label: "ANOS DE EXPERIÊNCIA" },
-  { value: 1500, suffix: "+", label: "CIRURGIAS DE ARTROSE" },
-  { value: 800, suffix: "+", label: "LESÕES ESPORTIVAS TRATADAS" },
-];
-
-const formacao = [
-  "Graduado em Medicina pela USP",
-  "Residência em Ortopedia no IOT-HCFMUSP",
-  "1º lugar - Título de Especialista SBOT",
-  "Especialização em Cirurgia do Joelho",
-  "Membro Titular da SBOT e SBCJ",
-  "Preceptor na Faculdade de Medicina da USP",
-];
-
 const treatments = [
   { 
     title: "Prótese Total do Joelho", 
@@ -59,7 +43,6 @@ const hospitals = [
 export default function PinnedSections() {
   const containerRef = useRef<HTMLDivElement>(null);
   const panelsRef = useRef<(HTMLElement | null)[]>([]);
-  const statsElementsRef = useRef<(HTMLDivElement | null)[]>([]);
   const hospitalsTrackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -101,32 +84,6 @@ export default function PinnedSections() {
           },
         });
       }
-
-      // Animação dos números stats
-      const statsElements = statsElementsRef.current.filter(Boolean);
-      statsElements.forEach((el, index) => {
-        if (!el) return;
-        const stat = stats[index];
-        const obj = { val: 0 };
-
-        gsap.to(obj, {
-          val: stat.value,
-          duration: 2.5,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: panelsRef.current[0],
-            start: "top center",
-            toggleActions: "play none none none",
-          },
-          onUpdate: () => {
-            if (el) {
-              const currentVal = Math.floor(obj.val);
-              const formattedVal = currentVal > 999 ? currentVal.toLocaleString("pt-BR") : currentVal;
-              el.textContent = `${stat.prefix || ""}${formattedVal}${stat.suffix || ""}`;
-            }
-          },
-        });
-      });
     }, containerRef);
 
     return () => ctx.revert();
@@ -152,41 +109,27 @@ export default function PinnedSections() {
             {/* Linha divisória */}
             <div className="w-full h-px bg-gray-400 mb-8" />
 
-            {/* Stats - Grid Especificações */}
-            <div className="grid grid-cols-2 gap-x-16 gap-y-6 mb-8">
-              {stats.map((stat, index) => (
-                <div key={index}>
-                  <p className="text-sm font-semibold tracking-[0.1em] text-gray-500 uppercase mb-2">{stat.label}</p>
-                  <div
-                    ref={(el) => { statsElementsRef.current[index] = el; }}
-                    className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight"
-                  >
-                    {stat.prefix || ""}0{stat.suffix || ""}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Linha divisória */}
-            <div className="w-full h-px bg-gray-400 mb-8" />
-
             {/* Formação - Grid de texto com mais ênfase */}
-            <div className="grid grid-cols-2 gap-x-16 gap-y-8">
+            <div className="grid grid-cols-2 gap-x-16 gap-y-6">
               <div>
-                <p className="text-base font-bold tracking-[0.1em] text-gray-500 uppercase mb-3">GRADUAÇÃO</p>
-                <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Formado em Medicina pela USP, universidade mais respeitadas da América Latina.</p>
+                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">GRADUAÇÃO</p>
+                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Formado em Medicina pela USP, universidade mais respeitada da América Latina.</p>
               </div>
               <div>
-                <p className="text-base font-bold tracking-[0.1em] text-gray-500 uppercase mb-3">RESIDÊNCIA</p>
-                <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Instituto de Ortopedia e Traumatologia do HC-FMUSP, maior centro de referência em ortopedia do país.</p>
+                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">RESIDÊNCIA</p>
+                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Instituto de Ortopedia e Traumatologia do HC-FMUSP, maior centro de referência em ortopedia do país.</p>
               </div>
               <div>
-                <p className="text-base font-bold tracking-[0.1em] text-gray-500 uppercase mb-3">TÍTULO SBOT</p>
-                <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Conquistou o 1º lugar nacional no exame de título de especialista da SBOT.</p>
+                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">TÍTULO SBOT</p>
+                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Conquistou o 1º lugar nacional no exame de título de especialista da SBOT.</p>
               </div>
               <div>
-                <p className="text-base font-bold tracking-[0.1em] text-gray-500 uppercase mb-3">ESPECIALIZAÇÃO</p>
-                <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Cirurgia do joelho, com foco em artrose do joelho, prótese total do joelho e artroscopia. </p>
+                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">ESPECIALIZAÇÃO</p>
+                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Especialização em Cirurgia do Joelho no IOT-HCFMUSP, com foco em artrose do joelho, prótese total do joelho e artroscopia.</p>
+              </div>
+              <div>
+                <p className="text-sm font-bold tracking-[0.1em] text-gray-500 uppercase mb-2">PRECEPTOR USP</p>
+                <p className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Preceptor da Residência Médica e Graduação na Faculdade de Medicina da USP.</p>
               </div>
             </div>
           </div>
