@@ -10,11 +10,11 @@ export default function HospitaisSection() {
   return (
     <section
       id="hospitais"
-      className="relative min-h-screen bg-[#1f2621]"
+      className="relative min-h-screen bg-dark-bg-deep"
     >
       <div className="min-h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
         <div className="mb-8">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tighter leading-[0.9]">
             Hospitais Onde Atuo
           </h2>
         </div>
@@ -31,9 +31,8 @@ export default function HospitaisSection() {
                 alt={hospital.name}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-[#1f2621]/30" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#1f2621]/80 to-transparent">
-                <h3 className="text-sm md:text-base lg:text-lg font-medium text-[#e8e6e0] leading-tight">
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                <h3 className="text-sm md:text-base lg:text-lg font-medium text-white leading-tight">
                   {hospital.name}
                 </h3>
               </div>
