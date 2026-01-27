@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -44,7 +43,6 @@ const hospitals = [
 export default function PinnedSections() {
   const containerRef = useRef<HTMLDivElement>(null);
   const panelsRef = useRef<(HTMLElement | null)[]>([]);
-  const hospitalsTrackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -52,8 +50,8 @@ export default function PinnedSections() {
     const panels = panelsRef.current.filter(Boolean) as HTMLElement[];
 
     const ctx = gsap.context(() => {
-      // Configura os painéis para o efeito de pinning (exceto hospitais)
-      panels.slice(0, -1).forEach((panel) => {
+      // Configura os painéis para o efeito de pinning
+      panels.forEach((panel) => {
         ScrollTrigger.create({
           trigger: panel,
           start: "top top",
@@ -62,29 +60,6 @@ export default function PinnedSections() {
           pinSpacing: false,
         });
       });
-
-      // Animação horizontal para a seção de hospitais
-      const hospitalsPanel = panels[panels.length - 1];
-      const hospitalsTrack = hospitalsTrackRef.current;
-      
-      if (hospitalsPanel && hospitalsTrack) {
-        const trackWidth = hospitalsTrack.scrollWidth;
-        const viewportWidth = window.innerWidth;
-        const scrollDistance = trackWidth - viewportWidth + 80; // 80px para padding
-
-        gsap.to(hospitalsTrack, {
-          x: -scrollDistance,
-          ease: "none",
-          scrollTrigger: {
-            trigger: hospitalsPanel,
-            start: "top top",
-            end: `+=${scrollDistance}`,
-            pin: true,
-            scrub: 1,
-            pinSpacing: true,
-          },
-        });
-      }
     }, containerRef);
 
     return () => ctx.revert();
@@ -291,38 +266,33 @@ export default function PinnedSections() {
         id="hospitais"
         className="relative h-screen z-40"
       >
-        <div className="h-screen w-full bg-neutral-950 flex flex-col justify-center py-16 overflow-hidden">
-          <div className="mb-8 px-8 md:px-16 lg:px-24">
-            <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[0.9]">
-              Hospitais <br />Onde Atuo
+        <div className="h-screen w-full bg-neutral-950 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
+          <div className="mb-8">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter leading-[0.9]">
+              Hospitais Onde Atuo
             </h2>
           </div>
 
-          {/* Galeria Horizontal de Hospitais */}
-          <div className="flex-1 flex items-center overflow-hidden">
-            <div 
-              ref={hospitalsTrackRef}
-              className="flex gap-5 pl-8 md:pl-16 lg:pl-20"
-            >
-              {hospitals.map((hospital, index) => (
-                <div 
-                  key={index} 
-                  className="group relative shrink-0 w-[calc(33.333vw-3rem)] h-[60vh] rounded-md overflow-hidden cursor-pointer"
-                >
-                  <img
-                    src={hospital.image}
-                    alt={hospital.name}
-                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                  <h3 className="text-xl md:text-2xl font-medium text-white leading-tight">
+          {/* Grid de Hospitais */}
+          <div className="grid grid-cols-5 gap-4 h-[50vh]">
+            {hospitals.map((hospital, index) => (
+              <div 
+                key={index} 
+                className="group relative rounded-lg overflow-hidden h-full"
+              >
+                <img
+                  src={hospital.image}
+                  alt={hospital.name}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                  <h3 className="text-sm md:text-base lg:text-lg font-medium text-white leading-tight">
                     {hospital.name}
                   </h3>
                 </div>
-                </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
