@@ -1,4 +1,20 @@
-import { testimonials } from "./data";
+const testimonials = [
+  {
+    name: "Maria Silva",
+    procedure: "Prótese Total do Joelho",
+    text: "Após anos sofrendo com dores intensas, o Dr. Vitor me devolveu a qualidade de vida. A cirurgia foi um sucesso e hoje consigo caminhar sem dor.",
+  },
+  {
+    name: "João Santos",
+    procedure: "Artroscopia",
+    text: "Profissional excepcional! Explicou todo o procedimento com clareza e o pós-operatório foi muito mais tranquilo do que eu esperava.",
+  },
+  {
+    name: "Ana Oliveira",
+    procedure: "Tratamento de Artrose",
+    text: "Encontrei no Dr. Vitor um médico que realmente escuta o paciente. O tratamento personalizado fez toda a diferença na minha recuperação.",
+  },
+];
 
 export default function DepoimentosSection() {
   return (
@@ -9,10 +25,10 @@ export default function DepoimentosSection() {
       <div className="min-h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-12">
-            <p className="text-sm font-bold tracking-widest text-foreground-subtle uppercase mb-4">
+            <p className="text-xs font-bold tracking-widest text-foreground-subtle uppercase mb-4">
               Depoimentos
             </p>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tighter leading-[0.9]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tighter leading-[0.9]">
               O que dizem<br />nossos pacientes
             </h2>
           </div>
@@ -30,7 +46,7 @@ export default function DepoimentosSection() {
                 </svg>
                 
                 {/* Texto do depoimento */}
-                <p className="text-lg text-foreground-muted leading-relaxed mb-6">
+                <p className="text-base text-foreground-muted leading-relaxed mb-6">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
                 

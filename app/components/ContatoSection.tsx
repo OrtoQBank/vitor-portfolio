@@ -8,15 +8,15 @@ export default function ContatoSection() {
         {/* Conteúdo Central */}
         <div className="flex-1 flex items-center justify-center px-8 md:px-16 lg:px-24">
           <div className="text-center max-w-3xl">
-            <p className="text-sm font-bold tracking-widest text-[#a8b09e] uppercase mb-4">
+            <p className="text-xs font-bold tracking-widest text-[#a8b09e] uppercase mb-4">
               Entre em Contato
             </p>
             
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9] mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9] mb-6">
               Agende sua Consulta
             </h2>
             
-            <p className="text-lg text-[#a8b09e] mb-10 max-w-xl mx-auto">
+            <p className="text-base text-[#a8b09e] mb-10 max-w-xl mx-auto">
               Estamos prontos para atender você. Entre em contato pelo WhatsApp para agendar sua consulta de forma rápida e prática.
             </p>
 

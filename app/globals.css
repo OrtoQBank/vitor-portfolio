@@ -161,6 +161,8 @@ details summary::-webkit-details-marker {
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Global typography scale reduction (10%) - scales all rem values proportionally */
+    font-size: 90%;
   }
 
   * {
