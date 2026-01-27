@@ -35,19 +35,19 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-background overflow-hidden">
-      <div className="container mx-auto max-w-7xl px-6 pt-32 pb-8 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start min-h-[80vh]">
+    <section ref={sectionRef} className="relative bg-background overflow-hidden">
+      <div className="container mx-auto max-w-7xl px-6 pt-32 pb-16 relative z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           
           {/* Left Side - Information */}
           <div className="flex flex-col justify-center text-left pt-16 lg:pt-24">
-            <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 leading-tight tracking-tight">
               Dr. Vitor Ricardo
             </h1>
-            <p className="text-2xl md:text-3xl text-foreground-muted mb-4 font-light">
+            <p className="text-xl md:text-2xl text-foreground-muted mb-4 font-light">
               Especialista em Cirurgia do Joelho
             </p>
-            <p className="text-lg text-foreground-subtle mb-8 max-w-md">
+            <p className="text-base text-foreground-subtle mb-8 max-w-md">
               Tratamento da artrose do joelho, prótese total do joelho e artroscopia.
             </p>
 
@@ -125,16 +125,13 @@ export default function HeroSection() {
                 <div className="hidden sm:block w-px h-8 bg-border"></div>
                 <div className="flex flex-col items-center">
                   <span className="text-xs text-foreground-subtle uppercase tracking-wide">TEOT</span>
-                  <span className="font-bold text-lg">Certificado</span>
+                  <span className="font-bold text-lg">20322</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Gradient fade at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
     </section>
   );
 }

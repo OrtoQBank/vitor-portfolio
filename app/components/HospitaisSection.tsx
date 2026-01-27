@@ -1,4 +1,10 @@
-import { hospitals } from "./data";
+const hospitals = [
+  { name: "Vila Nova Star", image: "/vilanovastar.jpg" },
+  { name: "Hospital Sírio-Libanês", image: "/sirio.jpg" },
+  { name: "Hospital Nove de Julho", image: "/9dejulho.png" },
+  { name: "Hospital São Camilo", image: "/saocamilo.jpeg" },
+  { name: "São Luiz Itaim", image: "/saoluis.avif" },
+];
 
 export default function HospitaisSection() {
   return (
@@ -8,7 +14,7 @@ export default function HospitaisSection() {
     >
       <div className="min-h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
         <div className="mb-8">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9]">
             Hospitais Onde Atuo
           </h2>
         </div>

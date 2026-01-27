@@ -7,10 +7,10 @@ export default function LocalizacaoSection() {
       <div className="min-h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tighter leading-[0.9] mb-4">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tighter leading-[0.9] mb-4">
               Localização do Consultório
             </h2>
-            <p className="text-lg text-foreground-muted">
+            <p className="text-base text-foreground-muted">
               Escolha a opção mais conveniente para você e agende sua consulta.
             </p>
           </div>
@@ -41,9 +41,9 @@ export default function LocalizacaoSection() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground mb-1">Consultório Presencial</h3>
-                  <p className="text-foreground-muted text-sm">Rua Teste, 123 - Bairro</p>
-                  <p className="text-foreground-muted text-sm">São Paulo - SP</p>
+                  <h3 className="text-base font-bold text-foreground mb-1">Consultório Presencial</h3>
+                  <p className="text-foreground-muted text-xs">Rua Teste, 123 - Bairro</p>
+                  <p className="text-foreground-muted text-xs">São Paulo - SP</p>
                 </div>
               </div>
             </div>
@@ -57,9 +57,9 @@ export default function LocalizacaoSection() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground mb-1">Consulta Online</h3>
-                  <p className="text-foreground-muted text-sm">Atendimento por videochamada</p>
-                  <p className="text-foreground-muted text-sm">Disponível em todo o Brasil</p>
+                  <h3 className="text-base font-bold text-foreground mb-1">Consulta Online</h3>
+                  <p className="text-foreground-muted text-xs">Atendimento por videochamada</p>
+                  <p className="text-foreground-muted text-xs">Disponível em todo o Brasil</p>
                 </div>
               </div>
             </div>

@@ -54,11 +54,11 @@ export default function JornadaSection() {
         <div className="hidden lg:flex w-1/2 h-full flex-col justify-center px-16 xl:px-20 py-16">
           <p className="text-sm font-bold tracking-[0.1em] text-foreground-subtle uppercase mb-4">Minha Jornada</p>
           
-          <h3 className="text-5xl xl:text-6xl font-bold text-foreground tracking-tight leading-[1.1] mb-12">
+          <h3 className="text-4xl xl:text-5xl font-bold text-foreground tracking-tight leading-[1.1] mb-12">
             Excelência técnica e cuidado centrado no paciente
           </h3>
 
-          <div className="space-y-6 text-xl text-foreground-muted leading-relaxed font-medium">
+          <div className="space-y-6 text-lg text-foreground-muted leading-relaxed font-medium">
             <p>
               Desde cedo me interessei pelo estudo da artrose, motivado pelo impacto que essa condição exerce na qualidade de vida dos pacientes. Durante a residência médica, esse interesse se consolidou, direcionando minha formação para o tratamento com foco na recuperação da mobilidade e bem-estar.
             </p>
