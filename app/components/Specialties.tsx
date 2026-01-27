@@ -80,11 +80,11 @@ export default function Specialties() {
     <section
       ref={sectionRef}
       id="tratamentos"
-      className="relative bg-white py-32 px-6 overflow-hidden"
+      className="relative bg-card py-32 px-6 overflow-hidden"
     >
       {/* Background decorativo */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-gray-50 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-muted to-transparent" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
@@ -93,31 +93,31 @@ export default function Specialties() {
         <div className="mb-24">
           <h2
             ref={titleRef}
-            className="text-7xl md:text-8xl lg:text-9xl font-bold text-gray-900 leading-[0.9] tracking-tight mb-8"
+            className="text-7xl md:text-8xl lg:text-9xl font-bold text-foreground leading-[0.9] tracking-tight mb-8"
           >
             Áreas de<br />
             <span className="text-primary">atuação.</span>
           </h2>
-          <p className="text-2xl md:text-3xl text-gray-600 max-w-3xl font-light leading-relaxed">
+          <p className="text-2xl md:text-3xl text-foreground-muted max-w-3xl font-light leading-relaxed">
             Artrose do Joelho, Prótese Total e Artroscopia
           </p>
         </div>
 
         {/* Texto descritivo */}
         <div className="mb-32 max-w-5xl">
-          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-foreground-muted leading-relaxed font-light">
             Atuo no tratamento da artrose do joelho utilizando{" "}
-            <span className="font-semibold text-gray-900">técnicas minimamente invasivas</span>{" "}
+            <span className="font-semibold text-foreground">técnicas minimamente invasivas</span>{" "}
             e prótese de joelho, com objetivo de devolver saúde e qualidade de vida aos meus pacientes.
             Também realizo o tratamento de{" "}
-            <span className="font-semibold text-gray-900">lesões esportivas</span>{" "}
+            <span className="font-semibold text-foreground">lesões esportivas</span>{" "}
             do joelho (ligamentos, meniscos, cartilagem) por artroscopia, possibilitando o retorno pleno ao esporte.
           </p>
         </div>
 
         {/* Tratamentos Principais - Grid Grande */}
         <div className="mb-32">
-          <h3 className="text-5xl md:text-6xl font-bold text-gray-900 mb-16 tracking-tight">
+          <h3 className="text-5xl md:text-6xl font-bold text-foreground mb-16 tracking-tight">
             Tratamentos
           </h3>
           <div className="grid lg:grid-cols-3 gap-8">
@@ -127,17 +127,17 @@ export default function Specialties() {
                 ref={(el) => {
                   cardsRef.current[index] = el;
                 }}
-                className="group relative bg-white border-2 border-gray-200 rounded-3xl p-10 hover:border-primary transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                className="group relative bg-card border-2 border-border rounded-3xl p-10 hover:border-primary transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
               >
                 {/* Número */}
-                <div className="text-8xl font-bold text-gray-100 group-hover:text-primary/10 transition-colors duration-500 mb-4">
+                <div className="text-8xl font-bold text-muted group-hover:text-primary/10 transition-colors duration-500 mb-4">
                   {specialty.number}
                 </div>
 
                 {/* Ícone */}
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
                   <svg
-                    className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-500"
+                    className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -152,12 +152,12 @@ export default function Specialties() {
                 </div>
 
                 {/* Título */}
-                <h4 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">
+                <h4 className="text-3xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                   {specialty.title}
                 </h4>
 
                 {/* Descrição */}
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-foreground-muted leading-relaxed">
                   {specialty.description}
                 </p>
 

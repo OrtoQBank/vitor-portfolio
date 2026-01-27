@@ -58,13 +58,13 @@ export default function ContactAnimation({ sectionRef }: ContactAnimationProps) 
           href={`https://wa.me/${CONTACT_INFO.phone}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block bg-green-500/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-8 md:p-10 transition-all duration-300 hover:scale-105 active:scale-95 border-4 border-white/30 hover:border-white/50 hover:shadow-3xl"
+          className="group block bg-primary/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-8 md:p-10 transition-all duration-300 hover:scale-105 active:scale-95 border-4 border-primary-foreground/30 hover:border-primary-foreground/50 hover:shadow-3xl"
           aria-label="Iniciar conversa no WhatsApp"
         >
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 text-center md:text-left">
-            <div className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+            <div className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 bg-card rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
               <svg
-                className="w-8 h-8 sm:w-10 sm:h-10 text-green-500"
+                className="w-8 h-8 sm:w-10 sm:h-10 text-primary"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -74,15 +74,15 @@ export default function ContactAnimation({ sectionRef }: ContactAnimationProps) 
             </div>
 
             <div className="flex-1 min-w-0">
-              <p className="text-white text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2">
+              <p className="text-primary-foreground text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2">
                 {CONTACT_INFO.schedule}
               </p>
-              <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium">
+              <p className="text-primary-foreground/90 text-sm sm:text-base md:text-lg font-medium">
                 {CONTACT_INFO.availability}
               </p>
             </div>
 
-            <div className="shrink-0 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white text-green-600 font-bold text-base sm:text-lg md:text-xl transition-all duration-300 hover:bg-gray-50 shadow-lg hover:shadow-xl">
+            <div className="shrink-0 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-card text-primary font-bold text-base sm:text-lg md:text-xl transition-all duration-300 hover:bg-muted shadow-lg hover:shadow-xl">
               <span>Iniciar Conversa</span>
               <svg
                 className="w-4 h-4 sm:w-5 sm:h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
