@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Merriweather } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 
@@ -7,6 +7,13 @@ const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-main",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const merriweather = Merriweather({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
   display: "swap",
 });
 
@@ -22,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${jakartaSans.variable} antialiased`}>
+      <body className={`${jakartaSans.variable} ${merriweather.variable} antialiased`}>
         <Header />
         {children}
       </body>

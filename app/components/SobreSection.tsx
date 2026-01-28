@@ -23,7 +23,7 @@ export default function SobreSection() {
               <p className="text-lg md:text-xl font-bold text-white leading-tight">Formado em Medicina pela USP, universidade mais respeitada da América Latina.</p>
             </div>
             <div>
-              <p className="text-xs font-bold tracking-[0.1em] text-gray-400 uppercase mb-2">RESIDÊNCIA</p>
+              <p className="text-xs font-bold tracking-[0.1em] text-gray-400 uppercase mb-2">RESIDÊNCIA Medica</p>
               <p className="text-lg md:text-xl font-bold text-white leading-tight">Instituto de Ortopedia e Traumatologia do HC-FMUSP, maior centro de referência em ortopedia do país.</p>
             </div>
             <div>
