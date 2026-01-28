@@ -25,10 +25,10 @@ export default function DepoimentosSection() {
       <div className="min-h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-12">
-            <p className="text-xs font-bold tracking-widest text-foreground-subtle uppercase mb-4">
+            <p className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">
               Depoimentos
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tighter leading-[0.9]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-tighter leading-[0.9]">
               O que dizem<br />nossos pacientes
             </h2>
           </div>
@@ -38,7 +38,7 @@ export default function DepoimentosSection() {
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className="bg-muted rounded-2xl p-8 border border-border"
+                className="bg-white rounded-2xl p-8 border border-border shadow-sm"
               >
                 {/* Ícone de aspas */}
                 <svg className="w-10 h-10 text-primary/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
@@ -46,14 +46,14 @@ export default function DepoimentosSection() {
                 </svg>
                 
                 {/* Texto do depoimento */}
-                <p className="text-base text-foreground-muted leading-relaxed mb-6">
+                <p className="text-base text-gray-600 leading-relaxed mb-6">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
                 
                 {/* Info do paciente */}
                 <div className="border-t border-border pt-6">
-                  <p className="font-bold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-foreground-subtle">{testimonial.procedure}</p>
+                  <p className="font-bold text-black">{testimonial.name}</p>
+                  <p className="text-sm text-gray-500">{testimonial.procedure}</p>
                 </div>
               </div>
             ))}

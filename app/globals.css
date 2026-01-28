@@ -1,35 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  /* NEW OFFICIAL COLOR PALETTE */
-  --background: #f6f4ee;
-  --background-gradient: linear-gradient(to right, #f6f4ee 0%, #be95be 100%);
-  --foreground: #38463e;
-  --foreground-muted: #5a6b5e;
-  --foreground-subtle: #7a8b7e;
-  --card: #ffffff;
-  --card-foreground: #38463e;
-  --popover: #ffffff;
-  --popover-foreground: #38463e;
-  --primary: #6d795d;
+  /* GREEN-TINTED COLOR PALETTE */
+  /* Light surfaces - subtle green tint */
+  --background: #f4f7f2;
+  --background-alt: #eef3eb;
+  --background-gradient: linear-gradient(to right, #f4f7f2 0%, #e0ead8 100%);
+  --foreground: #2a3a2e;
+  --foreground-muted: #4a5c4e;
+  --foreground-subtle: #6a7c6e;
+  --card: #eaf2e5;
+  --card-foreground: #2a3a2e;
+  --popover: #f9fbf7;
+  --popover-foreground: #2a3a2e;
+  --primary: #5a6b4d;
   --primary-foreground: #ffffff;
-  --secondary: #8a9579;
+  --secondary: #7a8b6d;
   --secondary-foreground: #ffffff;
-  --muted: #e8e6e0;
-  --muted-foreground: #5a6b5e;
-  --accent: #6d795d;
+  --muted: #dce8d5;
+  --muted-foreground: #4a5c4e;
+  --accent: #5a6b4d;
   --accent-foreground: #ffffff;
-  --destructive: #ef4444;
+  --destructive: #c44040;
   --destructive-foreground: #ffffff;
-  --border: #c5ccc0;
-  --border-muted: #d5d3cd;
-  --input: #c5ccc0;
-  --ring: #6d795d;
-  /* Dark section colors */
-  --dark-bg: #2a332c;
-  --dark-bg-deep: #1f2621;
-  --dark-foreground: #e8e6e0;
-  --dark-foreground-muted: #a8b09e;
+  --border: #c0ccb8;
+  --border-muted: #d0dcc8;
+  --input: #c0ccb8;
+  --ring: #5a6b4d;
+  /* Dark section colors - rich forest green */
+  --dark-bg: #2a3a2e;
+  --dark-bg-deep: #1e2a22;
+  --dark-foreground: #e8f0e4;
+  --dark-foreground-muted: #a8b8a0;
   --dark-border: #3a4a3e;
   --chart-1: #6d795d;
   --chart-2: #8a9579;
@@ -73,6 +75,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
   --color-background-gradient: var(--background-gradient);
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);

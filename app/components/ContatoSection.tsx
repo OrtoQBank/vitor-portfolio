@@ -2,21 +2,21 @@ export default function ContatoSection() {
   return (
     <section
       id="contato"
-      className="relative min-h-screen bg-[#2a332c]"
+      className="relative min-h-screen bg-card"
     >
       <div className="min-h-screen w-full flex flex-col">
         {/* Conteúdo Central */}
         <div className="flex-1 flex items-center justify-center px-8 md:px-16 lg:px-24">
           <div className="text-center max-w-3xl">
-            <p className="text-xs font-bold tracking-widest text-[#a8b09e] uppercase mb-4">
+            <p className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">
               Entre em Contato
             </p>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9] mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-tighter leading-[0.9] mb-6">
               Agende sua Consulta
             </h2>
             
-            <p className="text-base text-[#a8b09e] mb-10 max-w-xl mx-auto">
+            <p className="text-base text-gray-700 mb-10 max-w-xl mx-auto">
               Estamos prontos para atender você. Entre em contato pelo WhatsApp para agendar sua consulta de forma rápida e prática.
             </p>
 
@@ -34,7 +34,7 @@ export default function ContatoSection() {
             </a>
 
             {/* Telefone */}
-            <div className="flex items-center justify-center gap-2 text-[#a8b09e] mb-8">
+            <div className="flex items-center justify-center gap-2 text-gray-700 mb-8">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
@@ -47,7 +47,7 @@ export default function ContatoSection() {
                 href="https://instagram.com/drvitorricardo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-[#e8e6e0]/10 flex items-center justify-center text-[#a8b09e] hover:text-[#e8e6e0] hover:bg-[#e8e6e0]/20 transition-all"
+                className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-gray-600 hover:text-black hover:bg-primary/20 transition-all"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -59,14 +59,14 @@ export default function ContatoSection() {
         </div>
 
         {/* Footer */}
-        <div className="py-6 px-8 md:px-16 lg:px-24 border-t border-[#3a4a3e]">
+        <div className="py-6 px-8 md:px-16 lg:px-24 border-t border-border">
           <div className="container mx-auto max-w-6xl flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-[#a8b09e] text-center md:text-left">
+            <p className="text-sm text-gray-600 text-center md:text-left">
               © 2026 Dr. Vitor Ricardo. Todos os direitos reservados. | CRM-SP: 226.708 | RQE: 136.623
             </p>
-            <div className="flex gap-6 text-sm text-[#a8b09e]">
-              <a href="#" className="hover:text-[#e8e6e0] transition-colors">Termos de Uso</a>
-              <a href="#" className="hover:text-[#e8e6e0] transition-colors">Política de Privacidade</a>
+            <div className="flex gap-6 text-sm text-gray-600">
+              <a href="#" className="hover:text-black transition-colors">Termos de Uso</a>
+              <a href="#" className="hover:text-black transition-colors">Política de Privacidade</a>
             </div>
           </div>
         </div>

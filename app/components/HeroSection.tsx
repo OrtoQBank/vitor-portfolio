@@ -35,32 +35,32 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-background overflow-hidden">
+    <section ref={sectionRef} className="relative bg-card overflow-hidden">
       <div className="container mx-auto max-w-7xl px-6 pt-32 pb-16 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           
           {/* Left Side - Information */}
           <div className="flex flex-col justify-center text-left pt-16 lg:pt-24">
-            <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-black mb-3 leading-tight tracking-tight">
               Dr. Vitor Ricardo
             </h1>
-            <p className="text-xl md:text-2xl text-foreground-muted mb-4 font-light">
+            <p className="text-xl md:text-2xl text-gray-700 mb-4 font-light">
               Especialista em Cirurgia do Joelho
             </p>
-            <p className="text-base text-foreground-subtle mb-8 max-w-md">
+            <p className="text-base text-gray-600 mb-8 max-w-md">
               Tratamento da artrose do joelho, prótese total do joelho e artroscopia.
             </p>
 
-            <div className="flex flex-col gap-3 text-foreground-muted mb-6">
+            <div className="flex flex-col gap-3 text-gray-700 mb-6">
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-foreground-subtle" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span><strong>Presencial:</strong> Rua Real Address, 123</span>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-foreground-subtle" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
                 <span><strong>Online:</strong> Consulta disponível</span>
@@ -111,21 +111,21 @@ export default function HeroSection() {
             </div>
             
             {/* Credentials Card */}
-            <div className="bg-card/90 backdrop-blur-sm rounded-2xl shadow-xl px-8 py-5 mt-4 text-center">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-foreground-muted">
+            <div className="bg-white rounded-2xl shadow-xl px-8 py-5 mt-4 text-center border border-border">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-black">
                 <div className="flex flex-col items-center">
-                  <span className="text-xs text-foreground-subtle uppercase tracking-wide">CRM-SP</span>
-                  <span className="font-bold text-lg">226.708</span>
+                  <span className="text-xs text-gray-500 uppercase tracking-wide">CRM-SP</span>
+                  <span className="font-bold text-lg text-black">226.708</span>
                 </div>
-                <div className="hidden sm:block w-px h-8 bg-border"></div>
+                <div className="hidden sm:block w-px h-8 bg-gray-300"></div>
                 <div className="flex flex-col items-center">
-                  <span className="text-xs text-foreground-subtle uppercase tracking-wide">RQE</span>
-                  <span className="font-bold text-lg">136.623</span>
+                  <span className="text-xs text-gray-500 uppercase tracking-wide">RQE</span>
+                  <span className="font-bold text-lg text-black">136.623</span>
                 </div>
-                <div className="hidden sm:block w-px h-8 bg-border"></div>
+                <div className="hidden sm:block w-px h-8 bg-gray-300"></div>
                 <div className="flex flex-col items-center">
-                  <span className="text-xs text-foreground-subtle uppercase tracking-wide">TEOT</span>
-                  <span className="font-bold text-lg">20322</span>
+                  <span className="text-xs text-gray-500 uppercase tracking-wide">TEOT</span>
+                  <span className="font-bold text-lg text-black">20322</span>
                 </div>
               </div>
             </div>

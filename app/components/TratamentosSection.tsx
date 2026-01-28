@@ -21,11 +21,11 @@ export default function TratamentosSection() {
   return (
     <section
       id="tratamentos"
-      className="relative min-h-screen bg-[#2a332c]"
+      className="relative min-h-screen bg-dark-bg"
     >
       <div className="min-h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12 overflow-hidden">
         {/* Título */}
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#e8e6e0] tracking-tighter leading-[0.9] mb-12">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter leading-[0.9] mb-12">
           Áreas de Atuação
         </h2>
 
@@ -34,22 +34,22 @@ export default function TratamentosSection() {
           {treatments.map((treatment, index) => (
             <div key={index}>
               {/* Linha divisória */}
-              <div className="w-full h-px bg-[#3a4a3e] mb-6" />
+              <div className="w-full h-px bg-gray-600 mb-6" />
               
               {/* Título do tratamento */}
-              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#e8e6e0] leading-tight mb-4">
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight mb-4">
                 {treatment.title}
               </p>
               
               {/* Descrição */}
-              <p className="text-base md:text-lg text-[#a8b09e] leading-relaxed mb-6">
+              <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-6">
                 {treatment.description}
               </p>
             </div>
           ))}
           
           {/* Linha divisória final */}
-          <div className="w-full h-px bg-[#3a4a3e]" />
+          <div className="w-full h-px bg-gray-600" />
         </div>
       </div>
     </section>
