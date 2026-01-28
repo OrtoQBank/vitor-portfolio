@@ -47,6 +47,7 @@
   --sidebar-border: #d5d3cd;
   --sidebar-ring: #6d795d;
   --font-sans: var(--font-main), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-heading), "Merriweather", serif;
   --font-serif: "Playfair Display", serif;
   --font-mono: "Fira Code", monospace;
   --radius: 0.625rem;
@@ -119,6 +120,7 @@
   --color-dark-border: var(--dark-border);
 
   --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
 
@@ -188,8 +190,8 @@ details summary::-webkit-details-marker {
   h4,
   h5,
   h6 {
-    font-family: var(--font-main);
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.025em;
   }
